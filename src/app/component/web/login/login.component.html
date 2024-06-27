@@ -1,0 +1,23 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="loginModalLabel">Přihlášení do panelu</h5>
+    <button type="button" class="btn-close" aria-label="Zavřít" (click)="modalRef.dismissAll()"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <h4 *ngIf="errorMessage != null">{{errorMessage}}</h4>
+      <div class="mb-4">
+        <label for="gameUsername" class="form-label">Tvé Jméno</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="playerName" type="text" class="form-control form-control-lg" id="gameUsername" placeholder="Zadejte své herní jméno" required>
+      </div>
+      <div class="mb-4">
+        <label for="gamePassword" class="form-label">Tvé Heslo</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="password" type="password" class="form-control form-control-lg" id="gamePassword" placeholder="Zadejte své herní heslo" required>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="modalRef.dismissAll()">Zavřít</button>
+    <button type="submit" class="btn btn-primary" (click)="login()">Vstoupit do panelu</button>
+  </div>
+</div>

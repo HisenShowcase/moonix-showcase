@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  background-color: #1f2937;
+  min-height: 100vh;
+  padding-top: 6%;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.title {
+  color: #00eaff;
+  margin-top: 4%;
+}
+
+th, td {
+  border: 1px solid #4b5563;
+}
+
+th {
+  background-color: #374151;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #283548;
+}

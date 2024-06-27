@@ -1,0 +1,28 @@
+<section class="py-5 bg-dark" id="stats">
+  <div class="container">
+    <h2 class="text-center mb-5">Statistiky serveru</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="text-center">
+          <div class="stat-value">{{GetServerData() == null ? 0 : GetServerData().players.online}}</div>
+          <div>Počet Online Hráčů</div>
+          <div class="small text-sm-center">Aktualizováno před {{RefreshStats()}}</div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="text-center">
+          <div class="stat-value">24/7</div>
+          <div>Online podpora</div>
+          <div class="small text-sm-center">(Neověřená informace)</div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="text-center">
+          <div class="stat-value">3</div>
+          <div>Plánované minihry</div>
+          <div class="small text-sm-center">BoxFight, StarGames, Survival</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

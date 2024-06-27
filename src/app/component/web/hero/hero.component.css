@@ -1,0 +1,78 @@
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(29, 28, 32, 0.3), rgba(10, 10, 30, 0.95)), url('https://i.imgur.com/UPpYr0l.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--primary-color), transparent);
+  opacity: 0.3;
+  animation: heroGlow 5s infinite alternate;
+}
+
+@keyframes heroGlow {
+  from { opacity: 0.1; }
+  to { opacity: 0.3; }
+}
+
+.hero h1 {
+  font-size: 6rem;
+  animation: titleFloat 4s ease-in-out infinite;
+}
+
+.hero img {
+  width: 25%;
+  height: 25%;
+  top: 55px;
+  position: relative;
+  z-index: 2;
+  animation: titleFloat 4s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.btn-cta {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(45deg);
+  z-index: -1;
+  animation: buttonShine 3s infinite;
+}
+
+@keyframes buttonShine {
+  0% { left: -50%; top: -50%; }
+  100% { left: 150%; top: 150%; }
+}
+
+.btn-cta:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--accent-color);
+}

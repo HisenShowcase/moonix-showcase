@@ -1,0 +1,41 @@
+.navbar {
+  background: rgba(49, 48, 52, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color) !important;
+  text-shadow: 0 0 10px var(--primary-color);
+  animation: logoGlow 2s infinite alternate;
+}
+
+@keyframes logoGlow {
+  from { text-shadow: 0 0 5px var(--primary-color); }
+  to { text-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color); }
+}
+
+.nav-link {
+  color: var(--text-color) !important;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+  text-shadow: 0 0 10px var(--primary-color);
+}
+
+.btn-login {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  box-shadow: 0 0 15px var(--accent-color);
+}
+

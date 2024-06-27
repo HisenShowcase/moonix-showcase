@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<div class="account-panel">
+  <h2>Account Information</h2>
+
+  <div class="data-section">
+    <p><span class="label">Username:</span> <span class="value">{{ account.data.id.username }}</span></p>
+    <p><span class="label">UUID:</span> <span class="value">{{ account.data.id.uuid }}</span></p>
+    <p><span class="label">Rank:</span> <span class="value">{{ account.data.rank }}</span></p>
+    <p><span class="label">Temp Rank:</span> <span class="value">{{ account.data.temprank }}</span></p>
+  </div>
+
+  <h3>Auth Data</h3>
+  <div class="data-section">
+    <p><span class="label">Registration Time:</span> <span class="value">{{ account.data.auth_data.registration_time }}</span></p>
+    <p><span class="label">Last Login Time:</span> <span class="value">{{ account.data.auth_data.lastlogin_time}}</span></p>
+  </div>
+
+  <h3>Client Data</h3>
+  <div class="data-section">
+    <p><span class="label">Last Address:</span> <span class="value">{{ account.data.client_data.last_address }}</span></p>
+  </div>
+
+  <h3>Boxfight Data</h3>
+  <div class="data-section">
+    <p><span class="label">Prestige:</span> <span class="value">{{ account.data.boxfight_data.prestige }}</span></p>
+    <p><span class="label">Rebirth:</span> <span class="value">{{ account.data.boxfight_data.rebirth }}</span></p>
+    <p><span class="label">Clan Name:</span> <span class="value">{{ account.data.boxfight_data.clanName }}</span></p>
+  </div>
+
+  <h3>Punishment Data</h3>
+
+  <div *ngIf="account.data.punishment_data.type.length > 0">
+    <ng-container *ngFor="let time of account.data.punishment_data.fromTime; let i = index">
+      <div class="data-section punishment-data">
+        <p><span class="label">Type:</span> <span class="value">{{ account.data.punishment_data.type[i] }}</span></p>
+        <p><span class="label">Reason:</span> <span class="value">{{ account.data.punishment_data.reason[i] }}</span></p>
+        <p><span class="label">By Player:</span> <span class="value">{{ account.data.punishment_data.byPlayer[i] }}</span></p>
+        <p><span class="label">From:</span> <span class="value">{{ account.data.punishment_data.fromTime[i] }}</span></p>
+        <p><span class="label">To:</span> <span class="value">{{ account.data.punishment_data.toTime[i] }}</span></p>
+      </div>
+    </ng-container>
+  </div>
+
+  <h3>Survival Data</h3>
+  <div class="data-section">
+    <p><span class="label">Money:</span> <span class="value">{{ account.data.survival_data.money }}</span></p>
+    <p><span class="label">Experience:</span> <span class="value">{{ account.data.survival_data.experience }}</span></p>
+  </div>
+
+  <h3>General</h3>
+  <div class="data-section">
+    <p><span class="label">XP:</span> <span class="value">{{ account.data.xp }}</span></p>
+    <p><span class="label">Tokens:</span> <span class="value">{{ account.data.tokens }}</span></p>
+  </div>
+</div>
