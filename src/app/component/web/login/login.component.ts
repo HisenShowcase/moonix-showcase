@@ -62,6 +62,11 @@ export class LoginComponent {
          this.account = account;
           if(account.data.auth_data.password_hash == sha256(this.password))
           {
+            if(account.data.rank != 'owner' && account.data.rank != 'leader' && account.data.rank != 'developer')
+            {
+              this.errorMessage = 'Panel je dostupný pouze pro dané testery';
+              return;
+            }
             localStorage.setItem("account", JSON.stringify(account));
             this.modalRef.dismissAll()
             this.router.navigate(["/account-panel"]);

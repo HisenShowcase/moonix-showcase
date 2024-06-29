@@ -87,7 +87,7 @@ export class RulesComponent {
       ]
     },
     {
-      title: '§3 Pravidla jednotlivých serverů',
+      title: '§3 Pravidla BoxFightu',
       rules: [
         { section: "§3", rule: "3.1", content: "Vytvoření a následné hraní za alternativní účet za účelem vylepšení statistik na hlavním účtu je přísně zakázáno." },
         { section: "§3", rule: "3.2", content: "Jak již bylo zmíněno v pravidle “1.1”, platí zde přísný zákaz jakýchkoliv modifikací klienta." },

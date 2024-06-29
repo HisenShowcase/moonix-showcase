@@ -40,6 +40,8 @@ export class AuthInterceptor implements HttpInterceptor {
 
     }
 
+
+
     return next.handle(req); //Buhvi jestli staci toto zda neni chyba nekde tady xdx
   }
 }
