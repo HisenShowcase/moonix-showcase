@@ -18,7 +18,10 @@ export class AuthInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     if (req.headers.get('No-Auth') === 'True') {
-      return next.handle(req.clone());
+      const clonedreq = req.clone({
+        headers: req.headers.set('Access-Control-Allow-Origin', '*')
+      })
+      return next.handle(clonedreq);
     }
 
     if (localStorage.getItem('token') != null) {

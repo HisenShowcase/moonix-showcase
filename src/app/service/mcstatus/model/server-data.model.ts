@@ -46,7 +46,7 @@ export class Motd {
   }
 }
 
-export class ServerData {
+export class ServerDataModel {
   online: boolean;
   host: string;
   port: number;

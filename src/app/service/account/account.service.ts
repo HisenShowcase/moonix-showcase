@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {map, Observable, of} from 'rxjs';
-import { Account } from './model/AccountModel';
+import { Account } from './model/account.model';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Motd, Players, ServerData, SrvRecord, Version} from "../mcstatus/model/ServerData";
+import {Motd, Players, ServerDataModel, SrvRecord, Version} from "../mcstatus/model/server-data.model";
 import {AppConstants} from "../../constants";
 
 @Injectable({

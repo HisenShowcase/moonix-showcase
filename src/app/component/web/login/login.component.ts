@@ -3,7 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {Router} from "@angular/router";
 import {AccountService} from "../../../service/account/account.service";
 import { sha256 } from 'js-sha256';
-import {Account} from "../../../service/account/model/AccountModel";
+import {Account} from "../../../service/account/model/account.model";
 import {FormsModule, NgModel} from "@angular/forms";
 import {AuthService} from "../../../service/auth/auth.service";
 import {NgIf} from "@angular/common";

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable, Subscription, timer} from 'rxjs';
-import {Motd, Players, ServerData, SrvRecord, Version} from "./model/ServerData";
+import {Motd, Players, ServerDataModel, SrvRecord, Version} from "./model/server-data.model";
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +41,7 @@ export class McstatusService {
           parsedData = data;
         }
 
-        const serverData = new ServerData();
+        const serverData = new ServerDataModel();
         Object.assign(serverData, parsedData);
 
         // If there are nested objects, you need to manually assign them as well

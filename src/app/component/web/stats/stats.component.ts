@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {McstatusService} from "../../../service/mcstatus/mcstatus.service";
 import {Observable, timer} from "rxjs";
-import {ServerData} from "../../../service/mcstatus/model/ServerData";
+import {ServerDataModel} from "../../../service/mcstatus/model/server-data.model";
 
 @Component({
   selector: 'app-stats',
@@ -16,7 +16,7 @@ export class StatsComponent {
 
   }
 
-  public GetServerData() : ServerData
+  public GetServerData() : ServerDataModel
   {
     return this.status.serverData;
   }
@@ -32,7 +32,7 @@ export class StatsComponent {
       return "---";
     }
 
-    const lastRefresh = (<ServerData>this.status.serverData).retrieved_at;
+    const lastRefresh = (<ServerDataModel>this.status.serverData).retrieved_at;
     const curTime = new Date().getTime();
     let diffInSeconds = Math.floor((curTime - lastRefresh) / 1000);
 

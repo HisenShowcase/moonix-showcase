@@ -68,7 +68,8 @@ export class RulesComponent {
         { section: "§1", rule: "1.31", content: "Je přísně zakázáno obchodovat s herní měnou či předměty za reálné peníze nebo předměty." },
         { section: "§1", rule: "1.32", content: "Snaha obejít automatický AFK systém sítě Moonix.cz jakýmkoliv způsobem, je přísně zakázán." },
         { section: "§1", rule: "1.33", content: "Každý hráč, který se registruje na webu nebo minecraft serveru, automaticky souhlasí se všemi pravidly sítě a GDPR (Ochrana osobních údajů)." },
-        { section: "§1", rule: "1.34", content: "Je zakázáno porušovat zákony České a Slovenské republiky." }
+        { section: "§1", rule: "1.34", content: "Je zakázáno porušovat zákony České a Slovenské republiky." },
+        { section: "§1", rule: "1.35", content: "Je zakázáno týmovat s jakýmkoli hráčem, který není v marry nebo v klanu." }
       ]
     },
     {
@@ -87,7 +88,7 @@ export class RulesComponent {
       ]
     },
     {
-      title: '§3 Pravidla BoxFightu',
+      title: '§3 Pravidla jednotlivých serverů',
       rules: [
         { section: "§3", rule: "3.1", content: "Vytvoření a následné hraní za alternativní účet za účelem vylepšení statistik na hlavním účtu je přísně zakázáno." },
         { section: "§3", rule: "3.2", content: "Jak již bylo zmíněno v pravidle “1.1”, platí zde přísný zákaz jakýchkoliv modifikací klienta." },
