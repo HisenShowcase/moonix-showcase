@@ -1,41 +1,92 @@
+body, html{
+  background-color: transparent;
+}
+
 .navbar {
-  background: rgba(49, 48, 52, 0.8);
-  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: none;
 }
 
-.navbar-brand {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--primary-color) !important;
-  text-shadow: 0 0 10px var(--primary-color);
-  animation: logoGlow 2s infinite alternate;
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes logoGlow {
-  from { text-shadow: 0 0 5px var(--primary-color); }
-  to { text-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color); }
+.nav-list li {
+  margin: 0 20px;
 }
 
-.nav-link {
+.nav-list li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-list li a:hover {
+  color: var(--accent-color);
+}
+
+.obchod {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  text-transform: uppercase;
+  padding: 11px 24px;
+  background: linear-gradient(90deg, rgb(27, 255, 242), rgb(2, 195, 201), rgb(2, 184, 201));
+  border-radius: 25px;
+  text-align: center;
+  color: rgb(49, 49, 49) !important;
+  transition: all 0.3s;
+  background-size: 300% 300%;
+  animation: gradientAnimation 6s ease infinite;
+}
+
+.obchod:hover{
   color: var(--text-color) !important;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.nav-link:hover {
-  color: var(--primary-color) !important;
-  text-shadow: 0 0 10px var(--primary-color);
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.btn-login {
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  border: none;
-  transition: all 0.3s ease;
+.logo {
+  height: 40px;
+  margin-right: 20px;
 }
 
-.btn-login:hover {
-  background-color: var(--accent-color);
-  color: var(--background-color);
-  box-shadow: 0 0 15px var(--accent-color);
+.prihlaseni {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: transparent;
+  border-radius: 25px;
+  border: 2px solid rgb(27, 255, 242);  
+  color: rgb(27, 255, 242);
+  text-transform: uppercase;
+  margin-left: 20px;
+  transition: color 0.3s;
 }
 
+.prihlaseni:hover {
+  color: var(--accent-color);
+}
