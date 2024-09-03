@@ -69,6 +69,7 @@ export class AccountPanelComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.lastLoginDate = this.formatDate(this.account.data.auth_data.lastlogin_time);
     this.accountService.getAccount(this.account.data.id.username).subscribe(account => {
       this.account = account;
 
@@ -77,8 +78,6 @@ export class AccountPanelComponent implements OnInit {
       if(account.data.punishment_data.reason == null)
         return;
 
-      console.log("J má trest");
-
       for (let i = 0; i < account.data.punishment_data.reason.length; i++) {
         const type = account.data.punishment_data.type[i].trim().toLocaleLowerCase();
         
@@ -86,6 +85,9 @@ export class AccountPanelComponent implements OnInit {
           continue;
 
         const toTime = Number(account.data.punishment_data.toTime[i]); // Assuming toTime is in a recognizable Date format
+
+        if(toTime < Date.now())
+          continue;
         
         this.punishmentTime = toTime;
 
