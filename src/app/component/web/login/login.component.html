@@ -1,23 +1,22 @@
-<div class="modal-content">
-  <div class="modal-header">
-    <h5 class="modal-title" id="loginModalLabel">Přihlášení do panelu</h5>
-    <button type="button" class="btn-close" aria-label="Zavřít" (click)="modalRef.dismissAll()"></button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <h4 *ngIf="errorMessage != null">{{errorMessage}}</h4>
-      <div class="mb-4">
-        <label for="gameUsername" class="form-label">Tvé Jméno</label>
-        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="playerName" type="text" class="form-control form-control-lg" id="gameUsername" placeholder="Zadejte své herní jméno" required>
-      </div>
-      <div class="mb-4">
-        <label for="gamePassword" class="form-label">Tvé Heslo</label>
-        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="password" type="password" class="form-control form-control-lg" id="gamePassword" placeholder="Zadejte své herní heslo" required>
-      </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-danger" (click)="modalRef.dismissAll()">Zavřít</button>
-    <button type="submit" class="btn btn-primary" (click)="login()">Vstoupit do panelu</button>
-  </div>
+<div class="modal-header">
+  <h5 class="modal-title">PŘIHLÁSIT SE</h5>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="mb-3">
+      <label for="minecraftNick" class="form-label">Minecraft Nick</label>
+      <input type="text" class="form-control" id="minecraftNick" [(ngModel)]="playerName" name="playerName" placeholder="Zadej svůj herní nick" required />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Heslo</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="Zadej své heslo k účtu" required />
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modalRef.dismissAll()">Zavřít</button>
+  <button type="button" class="btn btn-primary" (click)="login()">Potvrdit</button>
 </div>

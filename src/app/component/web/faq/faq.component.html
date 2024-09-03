@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <h2 class="faq-title">ČASTO KLADENÉ OTÁZKY</h2>
+
+    <!-- Category Buttons -->
+    <div class="category-buttons">
+        <button
+            (click)="setCategory(categories[0])"
+            [ngClass]="{'active': selectedCategory === categories[0]}"
+            [ngStyle]="{'background-image': selectedCategory === categories[0] ? 'none' : 'url(https://cdn.discordapp.com/attachments/991027839488901180/1278791134994235515/image.png?ex=66d2bf4d&is=66d16dcd&hm=2f3718a245202717c11e64508267f67a0bd8b4886f4e5d97fb9b2c8007ef1569&)'}"
+        >
+            Globální
+        </button>
+        <button
+            (click)="setCategory(categories[1])"
+            [ngClass]="{'active': selectedCategory === categories[1]}"
+            [ngStyle]="{'background-image': selectedCategory === categories[1] ? 'none' : 'url(https://cdn.discordapp.com/attachments/991027839488901180/1278792259047002152/image.png?ex=66d2c059&is=66d16ed9&hm=7423ce38b5c40fc7637550565f206d9eb0e8dd43df9ec306a21ee1e324bc4a51&)'}"
+        >
+            BoxFight
+        </button>
+        <button
+            (click)="setCategory(categories[2])"
+            [ngClass]="{'active': selectedCategory === categories[2]}"
+            [ngStyle]="{'background-image': selectedCategory === categories[2] ? 'none' : 'url(https://cdn.discordapp.com/attachments/991027839488901180/1278790669220970586/image.png?ex=66d2bede&is=66d16d5e&hm=d6f7c1b5989aff4ee3c7711a46ab35eef237ccb575089307194e30caf4762882&)'}"
+        >
+            Survival
+        </button>
+    </div>
+
+    <div class="faq-container">
+        <div *ngFor="let faq of selectedCategory.faqs; let i = index" [ngClass]="{ 'open': faq.open }" class="faq-card">
+            <div class="faq-question" (click)="toggleFaq(i)">
+                <span>{{ faq.question }}</span>
+                <span [ngClass]="{ 'arrow-up': faq.open, 'arrow-down': !faq.open }" class="arrow">&#9660;</span>
+            </div>
+            <div class="faq-answer" [ngStyle]="{ 'max-height': faq.open ? '200px' : '0' }">
+                <p [innerHtml]="getSafeHtml(faq.answer)"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

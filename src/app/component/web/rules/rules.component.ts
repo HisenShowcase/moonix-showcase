@@ -33,7 +33,7 @@ export class RulesComponent {
 
   categories: Category[] = [
     {
-      title: '§1 Všeobecná a podrobná pravidla projektu Moonix.cz',
+      title: '§1 Všeobecná a podrobná pravidla projektu',
       rules: [
         { section: "§1", rule: "1.1", content: "Je zakázáno využívat veškeré modifikace Minecraftu, které zvýhodňují daného hráče oproti ostatním." },
         { section: "§1", rule: "1.2", content: "Hráč má zakázáno vytvářet si vícero účtů za účelem získání výhod, či za účelem obcházení trestu." },

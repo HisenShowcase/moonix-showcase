@@ -1,6 +1,8 @@
 <app-navbar></app-navbar>
 <div class="container mx-auto py-8 px-4">
-  <h1 class="text-4xl font-bold text-center mb-8 text-white">Pravidla Projektu Moonix.cz</h1>
+  <div class="project-rules">
+    <h2>Pravidla projektu Moonix</h2>
+  </div>
   <div *ngFor="let category of categories; let i = index" class="mb-lg-5">
     <h2 class="text-2xl font-semibold mb-4 title">{{ category.title }}</h2>
     <table class="w-full bg-gray-800 text-white">
@@ -23,4 +25,14 @@
     </table>
   </div>
 </div>
+
+<div class="falling-blocks">
+  <i class="fas fa-cube block"></i>
+  <i class="fas fa-cube block"></i>
+  <i class="fas fa-cube block"></i>
+  <i class="fas fa-cube block"></i>
+  <i class="fas fa-cube block"></i>
+</div>
+
+
 <app-footer></app-footer>

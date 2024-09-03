@@ -15,6 +15,7 @@ import {AccountService} from "./service/account/account.service";
 import {HomeComponent} from "./home.component";
 import {CommonModule} from "@angular/common";
 import {NgModel} from "@angular/forms";
+import { ReviewsService } from './service/review/reviews.service';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,7 @@ import {NgModel} from "@angular/forms";
   providers: [
     { provide: ToastrService, useClass: ToastrService },
     McstatusService,
+    ReviewsService,
     AccountService
   ],
   templateUrl: './app.component.html',

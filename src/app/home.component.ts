@@ -5,6 +5,8 @@ import {FeaturesComponent} from "./component/web/features/features.component";
 import {StatsComponent} from "./component/web/stats/stats.component";
 import {CommunityComponent} from "./component/web/community/community.component";
 import {FooterComponent} from "./component/web/footer/footer.component";
+import {ReviewsComponent} from './component/web/review/review.component';
+import {TeamComponent } from './component/web/team/team.component';
 
 @Component({
   selector: 'app-home',
@@ -15,14 +17,13 @@ import {FooterComponent} from "./component/web/footer/footer.component";
     StatsComponent,
     FeaturesComponent,
     HeroComponent,
-    NavbarComponent
+    NavbarComponent,
+    ReviewsComponent
   ],
   template: `
     <app-navbar></app-navbar>
     <app-hero></app-hero>
-    <app-features></app-features>
-    <app-stats></app-stats>
-    <app-community></app-community>
+    <app-reviews></app-reviews>
     <app-footer></app-footer>
   `
 })

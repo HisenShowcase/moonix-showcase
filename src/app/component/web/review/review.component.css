@@ -1,0 +1,133 @@
+.reviews-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.average-rating-card {
+  background: #121212;
+  border: 3px solid rgb(27, 255, 242);
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  max-width: 100%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin-right: 75px;
+}
+
+.average-rating-card p{
+  color: #d3d3d3;
+}
+
+.write{
+  text-decoration: none;
+  color: #303030; 
+
+}
+
+.average-rating {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  margin-top: -5px;
+}
+
+.total-ratings {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.review-navigation-container {
+  display: flex;
+  align-items: center;
+}
+
+.review-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.review-card {
+  background: #121212;
+  border: 3px solid rgb(27, 255, 242);
+  border-radius: 15px;
+  padding: 20px;
+  width: 375px;
+  max-width: 100%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  border: 2px solid rgb(27, 255, 242);
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+}
+
+.review-content {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.stars {
+  font-size: 15px;
+}
+
+.date {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.arrow {
+  font-size: 3rem;
+  color: rgb(27, 255, 242);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.arrow:hover {
+  color: rgb(0, 183, 174);
+}
+
+.arrow-left {
+  margin-right: 27rem;
+}
+
+.arrow-right {
+  margin-left: 27rem;
+}

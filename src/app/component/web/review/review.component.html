@@ -1,0 +1,45 @@
+<div class="reviews-container">
+  <!-- Average Rating Card -->
+  <div class="average-rating-card">
+    <p>Hodnocení Serveru</p>
+    <div class="average-rating"><a href="https://minecraftservery.eu/recenze/moonix"></a>
+      {{ averageRating() | number:'1.1-1' }}/5.0
+    </div>
+    <div class="total-ratings">
+      {{ reviews.length }}x Recenzí
+    </div>
+    <a href="https://minecraftservery.eu/server/moonix" class="write">Napsat Recenzi</a>
+  </div>
+  
+  <div class="review-navigation-container">
+  <div class="review-container">
+    <!-- Left arrow -->
+    <div class="arrow arrow-left" (click)="previousReview()">
+      &#10094; <!-- Unicode character for left arrow -->
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="profile-picture">
+          <img
+            [src]="getPlayerAvatar(currentReview.username)"
+            alt="{{ currentReview.username }} avatar"
+          />
+        </div>
+        <h3>{{ currentReview.username }}</h3>
+      </div>
+      <p class="review-content">"{{ currentReview.content.length > 190 ? (currentReview.content | slice:0:190) + '...' : currentReview.content.trim() }}"</p>
+      <div class="review-footer">
+        <!-- Display stars dynamically -->
+        <div>{{ '⭐'.repeat(currentReview.rating) }}</div>
+        <div class="date">{{ currentReview.created * 1000 | date }}</div>
+
+      </div>
+    </div>
+
+    <!-- Right arrow -->
+    <div class="arrow arrow-right" (click)="nextReview()">
+    &#10095;
+    </div>
+  </div>
+  </div>

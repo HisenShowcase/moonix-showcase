@@ -3,13 +3,13 @@
 
 :root {
   --primary-color: #00d6ff;
-  --background-color: #313034;
+  --background-color: #1b1b1b;
   --text-color: #FFFFFF;
   --accent-color: #80f4ff;
 }
 
 body, html {
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background-color: var(--background-color);
   overflow-x: hidden;
   margin: 0;
@@ -61,4 +61,31 @@ body, html {
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-100px) rotate(180deg); }
+}
+
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(29, 28, 32, 0.1); /* Track color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(89, 236, 255); /* Thumb color */
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(2, 195, 201); /* Thumb color on hover */
+}
+
+::-webkit-scrollbar-button {
+  background: rgba(29, 28, 32, 0.2); /* Arrow button color */
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent; /* Corner color */
 }

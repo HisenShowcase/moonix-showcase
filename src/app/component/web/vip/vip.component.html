@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+
+<div class="container mx-auto py-8 px-4">
+  <div class="vip-benefits">
+    <h2>Globální & Lobby Výhody</h2>
+  </div>
+
+  <!-- Table -->
+  <table class="w-full bg-gray-800 text-white">
+    <thead>
+      <tr class="bg-gray-700">
+        <th class="p-3">VÝHODY</th>
+        <th class="p-3 ranks" [ngStyle]="{'background-image': getGradient(moonGradientStart, moonGradientEnd), '-webkit-background-clip': 'text', 'color': 'transparent'}">MOON</th>
+        <th class="p-3 ranks" [ngStyle]="{'background-image': getGradient(earthGradientStart, earthGradientEnd), '-webkit-background-clip': 'text', 'color': 'transparent'}">EARTH</th>
+        <th class="p-3 ranks" [ngStyle]="{'background-image': getGradient(meteorGradientStart, meteorGradientEnd), '-webkit-background-clip': 'text', 'color': 'transparent'}">METEOR</th>
+        <th class="p-3 ranks" [ngStyle]="{'background-image': getGradient(tigerGradientStart, tigerGradientEnd), '-webkit-background-clip': 'text', 'color': 'transparent'}">TIGER</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let benefit of benefits">
+        <td class="p-3">{{ benefit.name }}</td>
+        <!-- Apply color for ticks and crosses, text color remains white -->
+        <td class="p-3">
+          <span [ngClass]="{'green-tick': benefit.vip === '✔', 'red-cross': benefit.vip === '✘'}">{{ benefit.vip }}</span>
+        </td>
+        <td class="p-3">
+          <span [ngClass]="{'green-tick': benefit.vipPlus === '✔', 'red-cross': benefit.vipPlus === '✘'}">{{ benefit.vipPlus }}</span>
+        </td>
+        <td class="p-3">
+          <span [ngClass]="{'green-tick': benefit.mvp === '✔', 'red-cross': benefit.mvp === '✘'}">{{ benefit.mvp }}</span>
+        </td>
+        <td class="p-3">
+          <span [ngClass]="{'green-tick': benefit.mvpPlus === '✔', 'red-cross': benefit.mvpPlus === '✘'}">{{ benefit.mvpPlus }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="vip-benefits">
+    <h2 class="box">BOXFIGHT Výhody</h2>
+  </div>
+
+  <!-- Table -->
+  <table class="w-full bg-gray-800 text-white">
+    <thead>
+      <tr class="bg-gray-700">
+        <th class="p-3">VÝHODY</th>
+        <th class="p-3 ranks" [ngStyle]="{'background-image': getGradient(moonGradientStart, moonGradientEnd), '-webkit-background-clip': 'text', 'color': 'transparent'}">MOON</th>
+        <th class="p-3 ranks" [ngStyle]="{'background-image': getGradient(earthGradientStart, earthGradientEnd), '-webkit-background-clip': 'text', 'color': 'transparent'}">EARTH</th>
+        <th class="p-3 ranks" [ngStyle]="{'background-image': getGradient(meteorGradientStart, meteorGradientEnd), '-webkit-background-clip': 'text', 'color': 'transparent'}">METEOR</th>
+        <th class="p-3 ranks" [ngStyle]="{'background-image': getGradient(tigerGradientStart, tigerGradientEnd), '-webkit-background-clip': 'text', 'color': 'transparent'}">TIGER</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let benefit of additionalBenefits">
+        <td class="p-3">{{ benefit.name }}</td>
+        <!-- Apply color for ticks and crosses, text color remains white -->
+        <td class="p-3">
+          <span [ngClass]="{'green-tick': benefit.vip.includes('✔'), 'red-cross': benefit.vip.includes('✘')}">{{ benefit.vip }}</span>
+        </td>
+        <td class="p-3">
+          <span [ngClass]="{'green-tick': benefit.vipPlus.includes('✔'), 'red-cross': benefit.vipPlus.includes('✘')}">{{ benefit.vipPlus }}</span>
+        </td>
+        <td class="p-3">
+          <span [ngClass]="{'green-tick': benefit.mvp.includes('✔'), 'red-cross': benefit.mvp.includes('✘')}">{{ benefit.mvp }}</span>
+        </td>
+        <td class="p-3">
+          <span [ngClass]="{'green-tick': benefit.mvpPlus.includes('✔'), 'red-cross': benefit.mvpPlus.includes('✘')}">{{ benefit.mvpPlus }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<br>
+<br>
+
+<app-footer></app-footer>

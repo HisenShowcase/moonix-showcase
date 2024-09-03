@@ -1,55 +1,95 @@
 <app-navbar></app-navbar>
-<div class="account-panel">
-  <h2>Account Information</h2>
 
-  <div class="data-section">
-    <p><span class="label">Username:</span> <span class="value">{{ account.data.id.username }}</span></p>
-    <p><span class="label">UUID:</span> <span class="value">{{ account.data.id.uuid }}</span></p>
-    <p><span class="label">Rank:</span> <span class="value">{{ account.data.rank }}</span></p>
-    <p><span class="label">Temp Rank:</span> <span class="value">{{ account.data.temprank }}</span></p>
-  </div>
+<div class="container">
+  <h2 class="faq-title">Tvůj účet</h2>
 
-  <h3>Auth Data</h3>
-  <div class="data-section">
-    <p><span class="label">Registration Time:</span> <span class="value">{{ account.data.auth_data.registration_time }}</span></p>
-    <p><span class="label">Last Login Time:</span> <span class="value">{{ account.data.auth_data.lastlogin_time}}</span></p>
-  </div>
-
-  <h3>Client Data</h3>
-  <div class="data-section">
-    <p><span class="label">Last Address:</span> <span class="value">{{ account.data.client_data.last_address }}</span></p>
-  </div>
-
-  <h3>Boxfight Data</h3>
-  <div class="data-section">
-    <p><span class="label">Prestige:</span> <span class="value">{{ account.data.boxfight_data.prestige }}</span></p>
-    <p><span class="label">Rebirth:</span> <span class="value">{{ account.data.boxfight_data.rebirth }}</span></p>
-    <p><span class="label">Clan Name:</span> <span class="value">{{ account.data.boxfight_data.clanName }}</span></p>
-  </div>
-
-  <h3>Punishment Data</h3>
-
-  <div *ngIf="account.data.punishment_data.type.length > 0">
-    <ng-container *ngFor="let time of account.data.punishment_data.fromTime; let i = index">
-      <div class="data-section punishment-data">
-        <p><span class="label">Type:</span> <span class="value">{{ account.data.punishment_data.type[i] }}</span></p>
-        <p><span class="label">Reason:</span> <span class="value">{{ account.data.punishment_data.reason[i] }}</span></p>
-        <p><span class="label">By Player:</span> <span class="value">{{ account.data.punishment_data.byPlayer[i] }}</span></p>
-        <p><span class="label">From:</span> <span class="value">{{ account.data.punishment_data.fromTime[i] }}</span></p>
-        <p><span class="label">To:</span> <span class="value">{{ account.data.punishment_data.toTime[i] }}</span></p>
+  <div class="card-container">
+    <!-- Player Skin Card (Left Card) -->
+    <div class="team-card player-skin-card">
+      <img class="player-image" [src]="playerSkinUrl" alt="Player Skin" />
+      <div class="player-info">
+        <h3 class="player-name">{{ account.data.id.username }}</h3>
       </div>
-    </ng-container>
-  </div>
+      <p>
+        <br>
+        <span class="first">Trest</span> » {{ punishmentTime != -1 ? "Ano" : "Ne" }}<br>
+        <span class="first">Do</span> » {{ (punishmentTime == -1 ? "..." : formatBanDate(punishmentTime)) }}<br>
+      </p>
+    </div>
 
-  <h3>Survival Data</h3>
-  <div class="data-section">
-    <p><span class="label">Money:</span> <span class="value">{{ account.data.survival_data.money }}</span></p>
-    <p><span class="label">Experience:</span> <span class="value">{{ account.data.survival_data.experience }}</span></p>
-  </div>
+    <!-- Global Information Card (Middle Card) -->
+    <div class="team-card global-info-card">
+      <div class="server-name-bubble-global">
+        <span><i class="fa-solid fa-chart-simple"></i></span>
+      </div>
+      <h3>Globální Informace</h3>
+      <p>
+        <span class="first">Jméno</span> » {{ account.data.id.username }}<br>
+        <span class="first">Rank</span> » {{ ((account.data.temprank == 'player' ? account.data.rank : account.data.temprank).charAt(0).toUpperCase() + (account.data.temprank == 'player' ? account.data.rank : account.data.temprank).slice(1).toLowerCase()) + (account.data.temprank == 'player' ? "" : " (do " + formatBanDate(account.data.rank_since) + ")" ) }}<br>
+        <span class="first">Token</span> » {{ account.data.tokens }}x<br><br>
+        <span class="first">Registrace</span> » {{ registrationDate }}<br>
+        <span class="first">Poslední Aktivita</span> » {{ lastLoginDate }}<br><br>
+        <span class="first">AutoLogin</span> » {{ account.data.auth_data.autologin ? 'Ano' : 'Ne' }}<br>
+        <span class="first">IP</span> » 
+        <span [ngClass]="{'blurred': !showIp}" class="ip-address">{{ account.data.client_data.last_address }}</span>
+        <i class="fa-solid" [ngClass]="{'fa-eye': !showIp, 'fa-eye-slash': showIp}" (click)="toggleIpVisibility()"></i>
+      </p>
+    </div>
 
-  <h3>General</h3>
-  <div class="data-section">
-    <p><span class="label">XP:</span> <span class="value">{{ account.data.xp }}</span></p>
-    <p><span class="label">Tokens:</span> <span class="value">{{ account.data.tokens }}</span></p>
+    <!-- Server-Specific Information Card (Right Card) -->
+    <div class="card-navigation">
+      <div class="arrow arrow-left" (click)="previousTab()">
+        &#10094;
+      </div>
+      <div class="server-info-container">
+        <div *ngIf="currentTab === 'boxFight'" class="team-card server-info-card">
+          <div class="server-name-bubble-server">
+            <span><i class="fa-solid fa-shield-halved"></i></span>
+          </div>
+          <h3>BoxFight Server</h3>
+          <p>
+            <span class="first">Evoluce</span> » {{ account.data.boxfight_data.evolution }}/5<br>
+            <span class="first">V Úschovně</span> » {{ account.data.boxfight_data.experience_storage }}x Levelů<br>
+            <span class="first">Klan</span> » {{ account.data.boxfight_data.clanName == "null" ? 'V Žádném' : account.data.boxfight_data.clanName }}<br><br>
+            <span class="first">Přístup do AFK</span> » 
+            <span [ngClass]="{'green-tick': account.data.boxfight_data.afkSeconds > 0, 'red-cross': account.data.boxfight_data.afkSeconds === 0}">
+              {{ account.data.boxfight_data.afkSeconds > 0 ? 'Ano' : 'Ne' }}
+            </span><br>
+            <span class="first">Přístup do AFK+</span> » 
+            <span [ngClass]="{'green-tick': account.data.boxfight_data.afkPlusSeconds > 0, 'red-cross': account.data.boxfight_data.afkPlusSeconds === 0}">
+              {{ account.data.boxfight_data.afkPlusSeconds > 0 ? 'Ano' : 'Ne' }}
+            </span><br><br>
+            <span class="first">Úložiště Vrtáku</span> » {{ account.data.boxfight_data.xpDrillST }}<br>
+          </p>
+        </div>
+
+        <div *ngIf="currentTab === 'survival'" class="team-card server-info-card">
+          <div class="server-name-bubble-server">
+            <span><i class="fa-solid fa-shield-halved"></i></span>
+          </div>
+          <h3>Survival Server</h3>
+          <p>
+            <span class="first">Zlaťáků</span> » {{ account.data.survival_data.money }}x<br>
+            <span class="first">Sušenky</span> » {{ account.data.survival_data.cookies }}x<br>
+            <span class="first">Evoluce</span> » {{ account.data.survival_data.evoluce }}<br><br>
+
+            <span class="first">Přístup do Krystalové Zóny</span> » 
+            <span [ngClass]="{'green-tick': account.data.survival_data.krystalova_seconds > 0, 'red-cross': account.data.survival_data.krystalova_seconds === 0}">
+              {{ account.data.survival_data.krystalova_seconds > 0 ? 'Ano' : 'Ne' }}
+            </span><br>
+            <span class="first">Přístup do Stokové Zóny</span> » 
+            <span [ngClass]="{'green-tick': account.data.survival_data.stokova_seconds > 0, 'red-cross': account.data.survival_data.stokova_seconds === 0}">
+              {{ account.data.survival_data.stokova_seconds > 0 ? 'Ano' : 'Ne' }}
+            </span><br><br>
+            <span class="first">Utraceno</span> » {{ account.data.survival_data.money_spent }}x Zlaťáků<br>
+          </p>
+        </div>
+      </div>
+      <div class="arrow arrow-right" (click)="nextTab()">
+        &#10095;
+      </div>
+    </div>
   </div>
 </div>
+
+<app-footer></app-footer>

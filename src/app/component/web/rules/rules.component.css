@@ -1,6 +1,6 @@
 :host {
   display: block;
-  background-color: #1f2937;
+  background-color: var(--background-color);
   min-height: 100vh;
   padding-top: 6%;
 }
@@ -13,6 +13,46 @@ table {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
+.project-rules {
+  text-align: center; /* Center-align text within the container */
+  margin-top: 50px; /* Optional: adjust top margin for spacing */
+}
+
+.project-rules h2 {
+  font-size: 3.0rem;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px; /* Space for underline */
+  color: #fff; /* Text color if needed */
+  text-transform: uppercase; /* Make text all caps */
+}
+
+.project-rules h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 65%; /* Adjust underline width as needed */
+  height: 4px;
+  border-radius: 2px; /* Rounded corners */
+  background: rgb(27, 255, 242);
+  transform: translateX(-50%); /* Centered underline */
+  animation: underlineColorChange 2s infinite;
+}
+
+@keyframes underlineColorChange {
+  0% {
+    background: rgb(27, 255, 242); /* Basic blue */
+  }
+  50% {
+    background: rgb(159, 233, 240); /* Light blue */
+  }
+  100% {
+    background: rgb(27, 255, 242); /* Basic blue */
+  }
+}
+
 .title {
   color: #00eaff;
   margin-top: 4%;
@@ -23,10 +63,52 @@ th, td {
 }
 
 th {
-  background-color: #374151;
+  background-color: rgb(22, 22, 22);
   font-weight: bold;
 }
 
 tr:nth-child(even) {
-  background-color: #283548;
+  background-color: rgb(22, 22, 22);
 }
+
+.falling-blocks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.falling-blocks .block {
+  position: absolute;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.7;
+  animation: fall linear infinite;
+  top: -40px;
+  transition: color 1s ease;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-40px) rotate(0deg);
+    color: rgba(255, 255, 255, 0.7); /* Initial color */
+  }
+  50% {
+    color: rgba(255, 255, 255, 0.7); /* Color during gradient background */
+  }
+  100% {
+    transform: translateY(calc(100vh + 40px)) rotate(360deg);
+    color: rgb(27, 255, 242); /* Final blue color */
+  }
+}
+
+
+.falling-blocks .block:nth-child(1) { left: 7%; animation-duration: 14s; animation-delay: 0s; }
+.falling-blocks .block:nth-child(2) { left: 89%; animation-duration: 12s; animation-delay: 2s; }
+.falling-blocks .block:nth-child(3) { left: 12%; animation-duration: 15s; animation-delay: 4s; }
+.falling-blocks .block:nth-child(4) { left: 96%; animation-duration: 20s; animation-delay: 6s; }
+.falling-blocks .block:nth-child(5) { left: 2%; animation-duration: 25s; animation-delay: 8s; }

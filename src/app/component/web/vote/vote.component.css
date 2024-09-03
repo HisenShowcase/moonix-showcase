@@ -1,0 +1,285 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-y: auto; /* Allow scrolling on the body */
+  height: 100%; /* Allow body to grow with content */
+}
+
+/* Vote Container */
+.vote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: flex-start; /* Align from the top */
+  min-height: 100vh; /* Minimum height to cover full viewport */
+  padding: 30px 50px; /* Reduced padding to move content higher */
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+  overflow: hidden; /* Prevent inner scrollbars */
+}
+
+/* Wrapper for Voting Section and Left Image */
+.vote-content-wrapper {
+  display: flex; /* Flexbox to align left and right sections */
+  align-items: flex-start; /* Align vertically from the top */
+  justify-content: center; /* Center horizontally */
+  gap: 30px; /* Spacing between text and image */
+  margin-bottom: 50px; /* Add some spacing at the bottom */
+  margin-top: 150px; /* Reduced space at the top to fit content */
+  width: 100%; /* Ensure content takes full width */
+  max-width: 1200px; /* Limit the width for better readability */
+}
+
+/* Voting Section */
+.paragraph-field-container {
+  text-align: left; /* Align text to the left */
+  margin-left: 30px; /* Adjust margin to move content to the right */
+  align-items: center;
+  margin-top: 75px;
+  text-align: center;
+}
+
+.paragraph-field-container h2 {
+  font-size: 3.0rem;
+  margin-bottom: 30px; /* Adjusted margin for better spacing */
+  margin-top: 20px; /* Reduced margin to fit content */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.paragraph-field-container h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 65%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgb(27, 255, 242);
+  transform: translateX(-50%);
+  animation: underlineColorChange 2s infinite;
+}
+
+.text-field-container {
+  margin-bottom: 20px;
+}
+
+.text-field {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 2px solid rgb(27, 255, 242);
+  background-color: #1e1e1e;
+  color: #fff;
+  width: 50%;
+  max-width: 500px;
+}
+
+/* Button Container */
+.button-container {
+  margin-top: 35px;
+}
+
+/* Voting Buttons with Unique Background Images */
+.vote-button {
+  background-color: transparent;
+  border: 2px solid rgb(27, 255, 242);
+  color: #fff;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s, border-color 0.3s;
+  background-size: cover; /* Cover the button */
+  background-position: center; /* Center the background image */
+}
+
+.vote-button:nth-child(1) {
+  background-image: url('https://i.imgur.com/t3jYQCl.png'); /* Button 1 background image */
+}
+
+.vote-button:nth-child(2) {
+  background-image: url('https://i.imgur.com/4fZoLer.png'); /* Button 2 background image */
+}
+
+.vote-button:nth-child(3) {
+  background-image: url('https://i.imgur.com/XkuXZWR.png'); /* Button 3 background image */
+}
+
+.voting-image-1{
+  scale: 110%;
+}
+
+
+
+.vote-button:hover {
+  color: white;
+  border-color: rgb(2, 195, 201);
+  background-color: rgba(2, 195, 201, 0.2); /* Slight hover effect */
+}
+
+.vote-button i {
+  margin-left: 10px;
+}
+
+/* Left Image Section */
+.image-container {
+  flex: 1; /* Allow image to take space */
+  text-align: center; /* Center the image */
+  scale: 80%;
+}
+
+.voting-image {
+  max-width: 100%; /* Keep the image within the container */
+  height: auto;
+  display: block; /* Make it a block element for centering */
+  margin: 0 auto; /* Center image */
+}
+
+/* Review Content Wrapper */
+.review-content-wrapper {
+  display: flex; /* Flexbox for layout */
+  align-items: flex-start; /* Align content from the top */
+  justify-content: center; /* Center horizontally */
+  gap: 30px; /* Gap between image and text */
+  margin-top: 50px; /* Space above the review content */
+  margin-bottom: 100px; /* Space below the review content */
+  width: 100%; /* Ensure content takes full width */
+  max-width: 1200px; /* Limit the width for better readability */
+}
+
+/* Left Image for Review Section */
+.review-image-container {
+  flex: 1; /* Allow image to take space */
+  text-align: center; /* Center the image */
+  margin-right: 30px; /* Adjust margin to move content to the right */
+}
+
+.review-image {
+  max-width: 100%; /* Keep the image within the container */
+  height: auto;
+  display: block; /* Make it a block element for centering */
+  margin: 0 auto; /* Center image */
+  scale: 80%; /* Adjust size of the image */
+}
+
+/* Review Section */
+.review-container {
+  text-align: center; /* Align text to the center */
+  margin-left: 30px; /* Adjust margin to move content to the right */
+  margin-top: 100px; /* Reduced margin to fit content */
+}
+
+.review-container h3 {
+  font-size: 2.8rem;
+  margin-top: 20px; /* Adjusted margin to move content up */
+  margin-bottom: 10px; /* Adjusted margin for better spacing */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.review-container h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 50%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgb(27, 255, 242);
+  transform: translateX(-50%);
+  animation: underlineColorChange 2s infinite;
+}
+
+.review-container p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.review-button {
+  background-color: transparent;
+  border: 2px solid rgb(27, 255, 242);
+  color: rgb(27, 255, 242);
+  border-radius: 35px;
+  padding: 15px 25px;
+  background-size: cover; /* Cover the button */
+  background-position: center; /* Center the background image */
+  background-image: url('https://i.imgur.com/t3jYQCl.png'); /* Button 3 background image */
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.review-button:hover {
+  color: white;
+  border-color: rgb(2, 195, 201);
+}
+
+.review-button i {
+  margin-left: 10px;
+}
+
+/* Underline Animation */
+@keyframes underlineColorChange {
+  0% {
+    background: rgb(27, 255, 242);
+  }
+  50% {
+    background: rgb(159, 233, 240);
+  }
+  100% {
+    background: rgb(27, 255, 242);
+  }
+}
+
+/* Falling Blocks */
+.falling-blocks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.falling-blocks .block {
+  position: absolute;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.7;
+  animation: fall linear infinite;
+  top: -40px;
+  transition: color 1s ease;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-40px) rotate(0deg);
+    color: rgba(255, 255, 255, 0.7); /* Initial color */
+  }
+  50% {
+    color: rgba(255, 255, 255, 0.7); /* Color during gradient background */
+  }
+  100% {
+    transform: translateY(calc(100vh + 40px)) rotate(360deg);
+    color: rgb(27, 255, 242); /* Final blue color */
+  }
+}
+
+.falling-blocks .block:nth-child(1) { left: 13%; animation-duration: 14s; animation-delay: 0s; }
+.falling-blocks .block:nth-child(2) { left: 81%; animation-duration: 12s; animation-delay: 2s; }
+.falling-blocks .block:nth-child(3) { left: 21%; animation-duration: 15s; animation-delay: 4s; }
+.falling-blocks .block:nth-child(4) { left: 92%; animation-duration: 20s; animation-delay: 6s; }
+.falling-blocks .block:nth-child(5) { left: 3%; animation-duration: 25s; animation-delay: 8s; }

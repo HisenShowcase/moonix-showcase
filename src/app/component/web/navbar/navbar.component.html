@@ -1,25 +1,31 @@
 <nav class="navbar">
   <div class="navbar-left">
-    <img src="https://cdn.discordapp.com/attachments/857619572974944267/1277919123552075890/Moonix-19-4-2024_2-1_1.png?ex=66ceea6d&is=66cd98ed&hm=030c16d72499af34a95c8c52db1e5db9141a7b8df29f83d445ffa2856473ef35&" alt="Logo" class="logo">
-  </div>
-  
-  <div class="navbar-center">
-    <ul class="nav-list">
-      <li><a href="#">Domů</a></li>
-      <li><a href="#">Pravidla</a></li>
-      <li><a href="#">A-Team</a></li>
-      <li><a href="obchod.moonix.cz" class="obchod">OBCHOD</a></li>
-      <li><a href="#">Hlasovat</a></li>
-      <li><a href="#">Wiki</a></li>
-      <li><a href="#">FAQ</a></li>
-    </ul>
-  </div>
-  
-  <div class="navbar-right">
-    <a *ngIf="!isLogged()" class="prihlaseni"
-    (click)="openLoginPopup()">Přihlásit</a>
+    <img src="https://i.imgur.com/IJXUQeK.png" alt="Logo" class="logo">
   </div>
 
-  <a ngIf="isLogged()" class="btn btn-login ms-2"  (click)="openPanel()">Panel</a>
-  <angIf="isLogged()" class="btn btn-dark ms-2"  (click)="logout()">Odhlásit se</a>
+  <div class="navbar-center">
+    <ul class="nav-list">
+      <li><a href="/" (click)="navigateTo('/')">Domů</a></li>
+      <li><a href="/pravidla">Pravidla</a></li>
+      <li><a href="/team">A-Team</a></li>
+      <li><a href="#" class="obchod" (click)="openExternalLink('https://obchod.moonix.cz')">OBCHOD</a></li>
+      <li><a href="/vote">Hlasovat</a></li>
+      <li><a href="/vip">VIP</a></li>
+      <li><a href="/faq" class="faq">FAQ</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar-right">
+    <a *ngIf="!isLogged()" class="prihlaseni" (click)="openLoginPopup()">Přihlásit</a>
+
+    <!-- Profile and Panel buttons shown when logged in -->
+    <div *ngIf="isLogged()" class="user-actions">
+      <a class="btn btn-panel" (click)="openPanel()">Panel</a>
+      <div class="profile-container">
+        <a class="profile-circle" (click)="logout()">
+          <img [src]="getMinecraftHeadUrl()" alt="Profile Picture">
+        </a>
+      </div>
+    </div>
+  </div>
 </nav>

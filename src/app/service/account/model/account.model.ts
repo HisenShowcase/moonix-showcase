@@ -27,9 +27,7 @@ export class Account {
       gadgets: any;
     };
     boxfight_data: {
-      prestige: number;
-      rebirth: number;
-      rebirth_points: number;
+      evolution: number;
       vault_repaired: boolean;
       afkSeconds: number;
       afkPlusSeconds: number;
@@ -37,8 +35,14 @@ export class Account {
       experience: number;
       ultimate_mines: number;
       offline_rewards: any[];
-      prestige_mines: any;
+      prestige_mines: number;
       clanName: string;
+      lastJoin: number;
+      xpDrillMS: number;
+      xpDrillOF: boolean;
+      xpDrillST: number;
+      xpDrillA: number;
+      xpDrillEnabled: boolean;
     };
     social_data: {
       youtube: string;
@@ -107,19 +111,24 @@ export class Account {
         gadgets: {},
       },
       boxfight_data: {
-        prestige: 0,
-        rebirth: 0,
-        rebirth_points: 0,
+        evolution: 0,
         vault_repaired: false,
         afkSeconds: 0,
         afkPlusSeconds: 0,
-        experience_storage: 0,
+        experience_storage: 50,
         experience: 0,
         ultimate_mines: 0,
         offline_rewards: [],
-        prestige_mines: {},
-        clanName: '',
+        prestige_mines: 0,
+        clanName: "null",
+        lastJoin: 0,
+        xpDrillMS: 0.002,
+        xpDrillOF: false,
+        xpDrillST: 5,
+        xpDrillA: 0,
+        xpDrillEnabled: true,
       },
+      
       social_data: {
         youtube: '',
         discord: '',
@@ -191,18 +200,22 @@ export const defaultAccount: Account = {
       gadgets: {},
     },
     boxfight_data: {
-      prestige: 0,
-      rebirth: 0,
-      rebirth_points: 0,
+      evolution: 0,
       vault_repaired: false,
       afkSeconds: 0,
       afkPlusSeconds: 0,
-      experience_storage: 0,
+      experience_storage: 50,
       experience: 0,
       ultimate_mines: 0,
       offline_rewards: [],
-      prestige_mines: {},
-      clanName: '',
+      prestige_mines: 0,
+      clanName: "null",
+      lastJoin: 0,
+      xpDrillMS: 0.002,
+      xpDrillOF: false,
+      xpDrillST: 5,
+      xpDrillA: 0,
+      xpDrillEnabled: true,
     },
     social_data: {
       youtube: '',

@@ -1,4 +1,6 @@
-body, html{
+body, html {
+  margin: 0;
+  padding: 0;
   background-color: transparent;
 }
 
@@ -7,7 +9,12 @@ body, html{
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: none;
+  background-color: transparent; /* Ensure the background is transparent */
+  position: fixed; /* Fix the navbar to the top */
+  top: 0; /* Align it to the top of the viewport */
+  width: 100%; /* Full width */
+  z-index: 10; /* Make sure it's above other content */
+  backdrop-filter: blur(10px); /* Optional: Add a blur effect to the background */
 }
 
 .nav-list {
@@ -19,6 +26,7 @@ body, html{
 
 .nav-list li {
   margin: 0 20px;
+  cursor: pointer;
 }
 
 .nav-list li a {
@@ -50,10 +58,9 @@ body, html{
   animation: gradientAnimation 6s ease infinite;
 }
 
-.obchod:hover{
+.obchod:hover {
   color: var(--text-color) !important;
 }
-
 
 @keyframes gradientAnimation {
   0% {
@@ -70,6 +77,7 @@ body, html{
 .logo {
   height: 40px;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .prihlaseni {
@@ -77,10 +85,11 @@ body, html{
   font-weight: 700;
   text-decoration: none;
   padding: 10px 20px;
+  cursor: pointer;
   font-size: 16px;
   background-color: transparent;
   border-radius: 25px;
-  border: 2px solid rgb(27, 255, 242);  
+  border: 2px solid rgb(27, 255, 242);
   color: rgb(27, 255, 242);
   text-transform: uppercase;
   margin-left: 20px;
@@ -89,4 +98,64 @@ body, html{
 
 .prihlaseni:hover {
   color: var(--accent-color);
+}
+
+.faq {
+  margin-right: 40px;
+}
+
+/* Ensure that the buttons and profile circle are the same size */
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.btn-panel,
+.btn-dark {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-align: center;
+  margin-left: 10px;
+  transition: all 0.3s;
+}
+
+.btn-panel {
+  background-color: transparent;
+  border: 2px solid rgb(27, 255, 242);
+  color: rgb(27, 255, 242);
+}
+
+.btn-panel:hover {
+  color: var(--accent-color);
+}
+
+.profile-container {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-circle {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgb(27, 255, 242);
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.btn-dark {
+  background-color: rgb(27, 255, 242);
+  color: rgb(49, 49, 49);
 }

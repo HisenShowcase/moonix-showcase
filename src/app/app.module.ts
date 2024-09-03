@@ -16,10 +16,14 @@ import {NgIf} from "@angular/common";
 import {AuthGuard} from "./auth.guard";
 import {AuthInterceptor} from "./app.auth-interceptor";
 import {RulesComponent} from "./component/web/rules/rules.component";
+import { ReviewsComponent } from './component/web/review/review.component';
+import { TeamComponent } from './component/web/team/team.component';
 
 @NgModule({
   declarations: [
-    NgModel
+    NgModule,
+    
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,10 +37,12 @@ import {RulesComponent} from "./component/web/rules/rules.component";
     FeaturesComponent,
     StatsComponent,
     CommunityComponent,
+    ReviewsComponent,
     FooterComponent,
-    RulesComponent
+    RulesComponent,
+    TeamComponent
   ],
-  exports: [RouterModule],
+  exports: [RouterModule, ReviewsComponent],
   providers: [
     AuthGuard,
     {

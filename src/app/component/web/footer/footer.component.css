@@ -1,5 +1,5 @@
 footer {
-  background-color: rgba(49, 48, 52, 0.9);
+  background-color: rgb(22, 22, 22);
 }
 
 .social-icons a {
@@ -11,5 +11,15 @@ footer {
 
 .social-icons a:hover {
   color: var(--primary-color);
+  cursor: pointer;
   transform: scale(1.2);
+}
+
+p {
+  color: var(--text-color);
+}
+
+.addon {
+  font-size: 12px;
+  color: gray;
 }
