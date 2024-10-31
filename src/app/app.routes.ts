@@ -7,6 +7,7 @@ import {TeamComponent} from "./component/web/team/team.component";
 import { VipComponent } from './component/web/vip/vip.component';
 import { VoteComponent } from './component/web/vote/vote.component';
 import { FaqComponent } from './component/web/faq/faq.component';
+import { StoreComponent } from './component/web/store/store.component';
 
 
 export const routes: Routes = [
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'pravidla', component: RulesComponent },
   { path: 'team', component: TeamComponent },
   { path: 'vip', component: VipComponent},
+  { path: 'store', component: StoreComponent},
   { path: 'vote', component: VoteComponent},
   { path: 'faq', component: FaqComponent}
 

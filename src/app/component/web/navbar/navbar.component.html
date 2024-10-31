@@ -8,8 +8,11 @@
       <li><a href="/" (click)="navigateTo('/')">Domů</a></li>
       <li><a href="/pravidla">Pravidla</a></li>
       <li><a href="/team">A-Team</a></li>
-      <li><a href="#" class="obchod" (click)="openExternalLink('https://obchod.moonix.cz')">OBCHOD</a></li>
-      <li><a href="/vote">Hlasovat</a></li>
+      <li>
+        <div class="sparkles-wrapper">
+          <a href="/store" class="obchod" (click)="navigateTo('/store')">OBCHOD</a>
+        </div>
+      </li>      <li><a href="/vote">Hlasovat</a></li>
       <li><a href="/vip">VIP</a></li>
       <li><a href="/faq" class="faq">FAQ</a></li>
     </ul>

@@ -18,6 +18,7 @@ import {AuthInterceptor} from "./app.auth-interceptor";
 import {RulesComponent} from "./component/web/rules/rules.component";
 import { ReviewsComponent } from './component/web/review/review.component';
 import { TeamComponent } from './component/web/team/team.component';
+import { StoreComponent } from './component/web/store/store.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { TeamComponent } from './component/web/team/team.component';
     ReviewsComponent,
     FooterComponent,
     RulesComponent,
+    StoreComponent,
     TeamComponent
   ],
   exports: [RouterModule, ReviewsComponent],
