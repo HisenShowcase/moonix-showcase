@@ -46,7 +46,7 @@ export class NavbarComponent {
   }
 
   navigateTo(path: string) {
-    window.location.href = `${this.baseUrl}#${path}`;
+    window.location.href = `${this.baseUrl}/moonix-showcase${path}`;
   }
 
   openExternalLink(url: string) {

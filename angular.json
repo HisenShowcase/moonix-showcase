@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "untitled2": {
+    "moonix-showcase": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,9 +11,9 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/untitled2",
+            "outputPath": "docs",  // The output path for GitHub Pages
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -31,7 +31,7 @@
               "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [],
-            "baseHref": "/moonix-showcase/"
+            "baseHref": "/moonix-showcase/"  // Set the correct baseHref
           },
           "configurations": {
             "production": {
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "untitled2:build:production"
+              "buildTarget": "moonix-showcase:build:production"
             },
             "development": {
-              "buildTarget": "untitled2:build:development"
+              "buildTarget": "moonix-showcase:build:development"
             }
           },
           "defaultConfiguration": "development"
