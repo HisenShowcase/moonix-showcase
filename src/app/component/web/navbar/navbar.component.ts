@@ -18,7 +18,7 @@ export class NavbarComponent {
   public isVicedropOpen: boolean = false;
 
 
-  private baseUrl = 'https://moonix.cz';
+  private baseUrl = 'https://hisenshowcase.github.io';
   public username: string | null = localStorage.getItem("username");
 
   constructor(private modalService: NgbModal, private router: Router) {}
