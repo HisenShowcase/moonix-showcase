@@ -26,29 +26,47 @@ export class LoginComponent {
   constructor(public modalRef: NgbModal, public router: Router, private authService: AuthService, private accountService: AccountService) {}
 
   login() {
-    this.authService.login(this.playerName, sha256(this.password)).subscribe((data) => {
-      let token = data.token;
-
-      if (!token) {
-        this.errorMessage = 'Token is null.';
-        return;
+    // Simulated login under nickname "H1senk0"
+    this.playerName = "H1senk0";  
+  
+    // Store username in localStorage
+    localStorage.setItem("username", this.playerName);
+  
+    // Set a dummy token to prevent authentication issues
+    localStorage.setItem("token", "dummy_token");
+  
+    // Simulated account data to avoid errors when fetching from accountService
+    const account = {
+      data: {
+        auth_data: {
+          password_hash: sha256("dummy_password") 
+        },
+        username: "H1senk0",
+        email: "h1senk0@example.com",
+        role: "user"
       }
-
-      localStorage.setItem('token', token);
-
-      this.accountService.getAccount(this.playerName).subscribe((account) => {
-        if (account.data.auth_data.password_hash === sha256(this.password)) {
-          localStorage.setItem("account", JSON.stringify(account));
-          this.modalRef.dismissAll();
-          this.router.navigate(["/account-panel"]);
-        } else {
-          this.errorMessage = 'Špatné jméno nebo heslo.';
-        }
-      }, () => {
-        this.errorMessage = 'Špatné jméno nebo heslo.';
-      });
-    }, () => {
-      this.errorMessage = 'Špatné jméno nebo heslo.';
+    };
+  
+    // Store account details
+    localStorage.setItem("account", JSON.stringify(account));
+  
+    // Debugging logs
+    console.log("Stored username:", localStorage.getItem("username"));
+    console.log("Stored token:", localStorage.getItem("token"));
+    console.log("Stored account:", localStorage.getItem("account"));
+  
+    // Close modal if applicable
+    this.modalRef.dismissAll();
+  
+    // Navigate to account panel
+    this.router.navigate(["/account-panel"]).then(() => {
+      // Wait 0.5s before refreshing the page
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    }).catch((err) => {
+      console.error("Navigation error:", err);
     });
-  }
+  }  
+  
 }

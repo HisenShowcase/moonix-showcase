@@ -31,6 +31,7 @@ export class VipComponent {
   benefits = [
     { name: '/fly (*na Lobby*)', vip: '✔', vipPlus: '✔', mvp: '✔', mvpPlus: '✔' },
     { name: '/glow (*na Lobby*)', vip: '✘', vipPlus: '✔', mvp: '✔', mvpPlus: '✔' },
+    { name: 'Používání Gadgetů (*na Lobby*)', vip: '✘', vipPlus: '✘', mvp: '✘', mvpPlus: '✔' },
     { name: 'Používání barviček v chatu', vip: '✘', vipPlus: '✔', mvp: '✔', mvpPlus: '✔' },
     { name: 'Speciální role na Discordu', vip: '✔', vipPlus: '✔', mvp: '✔', mvpPlus: '✔' },
     { name: 'Přístup do VIP roomky na Discordu', vip: '✔', vipPlus: '✔', mvp: '✔', mvpPlus: '✔' },
@@ -48,6 +49,7 @@ export class VipComponent {
     { name: '/heal', vip: '1h', vipPlus: '30min', mvp: '20min', mvpPlus: '15min' },
     { name: '/feed', vip: '20min', vipPlus: '10min', mvp: '3min', mvpPlus: '3min' },
     { name: '/ec', vip: '✔', vipPlus: '✔', mvp: '✔', mvpPlus: '✔' },
+    { name: '/zprava', vip: '✔', vipPlus: '✔', mvp: '✔', mvpPlus: '✔' },
     { name: 'Přidání levelů', vip: '+35 Levelů', vipPlus: '+75 Levelů', mvp: '+100 Levelů', mvpPlus: '+150 Levelů' },
     { name: 'Větší zisk u Kinga', vip: '+25%', vipPlus: '+50%', mvp: '+100%', mvpPlus: '+100%' },
     { name: 'Speciální VIP zóna', vip: '✔', vipPlus: '✔', mvp: '✔', mvpPlus: '✔' },
@@ -57,6 +59,7 @@ export class VipComponent {
     { name: 'Používání barviček', vip: '✘', vipPlus: '✔', mvp: '✔', mvpPlus: '✔' },
     { name: 'Zvuk při napojení', vip: '✘', vipPlus: '✘', mvp: '✔', mvpPlus: '✔' },
     { name: 'Šance na uchování XP při smrti', vip: '✘', vipPlus: '✘', mvp: '50%', mvpPlus: '50%' },
+    { name: 'Kolik % itemů vypadne při úmrtí', vip: '50%', vipPlus: '50%', mvp: '40%', mvpPlus: '35%' },
     { name: 'Větší kapacita EXP Úschovny', vip: '+40 Levelů', vipPlus: '+100 Levelů', mvp: '+250 Levelů', mvpPlus: '+320 Levelů' },
     { name: 'Odebrání denního limitu toček na ruletě', vip: '✘', vipPlus: '✔', mvp: '✔', mvpPlus: '✔' },
     { name: 'Neomezený limit sázky EXP na ruletě', vip: '✘', vipPlus: '✘', mvp: '✘', mvpPlus: '✔' },

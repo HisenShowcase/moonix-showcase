@@ -35,4 +35,10 @@ import { ReviewsService } from './service/review/reviews.service';
 })
 export class AppComponent {
   title = 'Moonix | Hlavní Stránka';
+  showContent = false;
+
+  ngOnInit() {
+    const cookieConsent = localStorage.getItem('cookieConsent');
+    this.showContent = cookieConsent === 'accepted';
+  }
 }

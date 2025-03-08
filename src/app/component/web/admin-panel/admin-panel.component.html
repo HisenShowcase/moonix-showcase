@@ -1,0 +1,141 @@
+<app-navbar></app-navbar>
+
+<div class="title-container">
+  <h1 class="title">Admin Panel</h1>
+</div>
+
+<div class="store-container">
+  <div class="category-card">
+    <div class="server-name-bubble-category">
+      <span><i class="fa-solid fa-layer-group"></i></span>
+    </div>
+    <h3>Kategorie</h3>
+    <ul></ul>
+    <div class="category-buttons">
+      <button class="category-btn" (click)="loadPanelData('Hlavní Panel')">
+        <i class="fa-solid fa-house"></i> Hlavní Panel
+      </button>
+      <button class="category-btn" (click)="loadPanelData('Obchod')">
+        <i class="fa-solid fa-store"></i> Obchod
+      </button>
+      <button class="category-btn" (click)="loadPanelData('Dárkové Karty')">
+        <i class="fa-solid fa-gift"></i> Dárkové Karty
+      </button>
+      <button class="category-btn" (click)="loadPanelData('Objednávky')">
+        <i class="fa-solid fa-box"></i> Objednávky
+      </button>
+    </div>
+  </div>
+
+  <div class="product-display-card">
+    <div class="server-name-bubble-product">
+      <span><i class="fa-solid fa-sitemap"></i></span>
+    </div>
+    <h3 class="product-title">{{ activePanel }}</h3>
+    <div class="product-content">
+      <div *ngIf="activePanel === 'Hlavní Panel'">
+        <div class="indicator-cards">
+            <div class="indicator-card">
+              <h4>Momentálně hráčů</h4>
+              <p>» N/A</p>
+              <i class="fa-solid fa-users icon-right"></i>
+            </div>
+            <div class="indicator-card">
+              <h4>Členů na Discordu</h4>
+              <p>» {{ discordMemberCount !== null ? discordMemberCount : 'Načítání...' }} lidí</p>
+              <i class="fa-brands fa-discord icon-right"></i>
+            </div>
+            <div class="indicator-card">
+              <h4>Derv Streamuje</h4>
+              <p>
+                <span *ngIf="isDervStreaming === true" class="streaming-status online">» Online</span>
+                <span *ngIf="isDervStreaming === false" class="streaming-status offline">» Offline</span>
+                <span *ngIf="isDervStreaming === null">» N/A</span>
+              </p>
+              <i class="fa-solid fa-video icon-right"></i>
+            </div>
+            <div class="indicator-card">
+                <h4>Počet proběhnutých plateb</h4>
+                <p>» N/A</p>
+                <i class="fa-solid fa-bag-shopping icon-right"></i>
+              </div>
+              <div class="indicator-card">
+                <h4>Vyděláno skrz platby</h4>
+                <p>» N/A</p>
+                <i class="fa-solid fa-money-bill-wave icon-right"></i>
+              </div>
+              <div class="indicator-card">
+                <h4>Nadcházející Update</h4>
+                <p>
+                <i class="fa-solid fa-cloud-arrow-down icon-right"></i>» 24.12 2024 (StarGames)
+                </p>
+              </div>
+          </div>
+      </div>
+      <div *ngIf="activePanel === 'Dárkové Karty'">
+  
+        <!-- Styled Gift Cards Display -->
+        <div class="checkout-card">
+          <h3 class="products-title">⒈ Seznam Poukazů</h3>
+          
+          <!-- Gift Card Headers -->
+          <ul class="product-list">
+            <li class="product-header">
+              <span class="product-name-t">Typ</span>
+              <span class="product-quantity-t">Počet Použití</span>
+              <span class="product-price-t">Hodnota</span>
+              <span class="product-total-t">Kód</span>
+            </li>
+      
+            <!-- Display Each Gift Card -->
+            <li *ngFor="let card of giftCards" class="product-item">
+              <span class="product-name">{{ card.type }}</span>
+              <span class="product-quantity">{{ card.uses }}</span>
+              <span class="product-price">{{ card.value }} {{ card.type === 'Procenta' ? '%' : 'Kč' }}</span>
+              <span class="product-total">{{ card.code }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="products-title">⒉  Vytvořit Poukaz</h3>
+
+
+        <button class="category-btn create-gift-card-btn" (click)="toggleGiftCardForm()">Vytvořit Poukaz</button>
+      
+        <div *ngIf="showGiftCardForm" class="gift-card-form">
+          <div class="input-group">
+            <label>Typ Poukazu:</label>
+            <select [(ngModel)]="giftCardType">
+              <option value="Procenta">Procenta</option>
+              <option value="Částka">Částka</option>
+            </select>
+          </div>
+          
+          <div class="input-group">
+            <label>Počet použití:</label>
+            <input type="number" [(ngModel)]="giftCardUses" min="1" />
+          </div>
+          
+          <div class="input-group">
+            <label>Hodnota:</label>
+            <input type="number" [(ngModel)]="giftCardValue" min="0" placeholder="Enter percentage or amount" />
+          </div>
+          
+          <div class="input-group">
+            <label>Kód:</label>
+            <input type="text" [value]="giftCardCode" readonly />
+            <button class="regenerate-btn" (click)="generateGiftCardCode()">Regenerovat</button>
+          </div>
+          
+          <button class="confirm-btn" (click)="createGiftCard()">Potvrdit vytvoření</button>
+        </div>
+      </div>
+      
+
+  </div>
+</div>
+</div>
+<br><br><br>
+<app-footer></app-footer>
+
+

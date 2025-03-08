@@ -14,6 +14,10 @@ import { NgIf } from "@angular/common";
   styleUrls: ['./navbar.component.css'] // Ensure correct style file path
 })
 export class NavbarComponent {
+
+  public isVicedropOpen: boolean = false;
+
+
   private baseUrl = 'https://moonix.cz';
   public username: string | null = localStorage.getItem("username");
 
@@ -38,7 +42,7 @@ export class NavbarComponent {
   }
 
   getMinecraftHeadUrl(): string {
-    return `https://mineskin.eu/helm/${this.username}`;
+    return `https://mineskin.eu/avatar/${this.username}/100.png`;
   }
 
   navigateTo(path: string) {
@@ -47,6 +51,10 @@ export class NavbarComponent {
 
   openExternalLink(url: string) {
     window.open(url, '_blank');
+  }
+
+  toggleVicedrop(isOpen: boolean) {
+    this.isVicedropOpen = isOpen;
   }
 }
 

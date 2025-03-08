@@ -20,6 +20,7 @@ import { ReviewsComponent } from './component/web/review/review.component';
 import { TeamComponent } from './component/web/team/team.component';
 import { StoreComponent } from './component/web/store/store.component';
 
+
 @NgModule({
   declarations: [
     NgModule,

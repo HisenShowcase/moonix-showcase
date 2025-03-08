@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { NgIf, NgForOf, CommonModule } from '@angular/common';
-import { AccountService } from '../../../service/account/account.service';
-import { MineSkinService } from '../../../service/mineskin/mine-skin.service';
-import { Account } from '../../../service/account/model/account.model';
 import { NavbarComponent } from '../../web/navbar/navbar.component';
 import { FooterComponent } from '../../web/footer/footer.component';
 
@@ -21,7 +18,47 @@ import { FooterComponent } from '../../web/footer/footer.component';
   styleUrls: ['./account-panel.component.css']
 })
 export class AccountPanelComponent implements OnInit {
-  account: Account;
+  
+  // 🔹 MODIFY THESE VALUES TO CHANGE ACCOUNT DETAILS 🔹
+  account = {
+    data: {
+      id: { username: "H1senk0" }, // Change username
+      auth_data: {
+        registration_time: 1672531200, // Example timestamp
+        lastlogin_time: 1704067200,    // Example timestamp
+        autologin: true // Auto-login status
+      },
+      rank: "owner", // Default rank
+      temprank: "vip", // Temporary rank (set to "player" if none)
+      rank_since: 1710000000, // Rank expiration timestamp (set 0 if permanent)
+      tokens: 162, // Number of tokens
+      client_data: {
+        last_address: "192.174.2.8" // User's last IP address
+      },
+      punishment_data: {
+        reason: null, // Example: "Spamming"
+        type: [], // Example: ["ban"]
+        toTime: [] // Example: [1710000000]
+      },
+      boxfight_data: {
+        evolution: 3, // Evolution level (1-5)
+        experience_storage: 120, // Stored experience levels
+        clanName: "Warriors", // Clan name ("null" if no clan)
+        afkSeconds: 3600, // AFK access (set 0 for none)
+        afkPlusSeconds: 0, // AFK+ access (set 0 for none)
+        xpDrillST: 5 // Drill storage level
+      },
+      survival_data: {
+        money: 1000, // Gold coins
+        cookies: 50, // Cookies
+        evoluce: 2, // Evolution level
+        krystalova_seconds: 7200, // Access to Crystal Zone (set 0 for none)
+        stokova_seconds: 0, // Access to Sewer Zone (set 0 for none)
+        money_spent: 500 // Spent gold coins
+      }
+    }
+  };
+
   playerSkinUrl: string;
   showIp: boolean = false;
   registrationDate: string;
@@ -29,72 +66,17 @@ export class AccountPanelComponent implements OnInit {
   punishmentTime: number = -1;
   currentTab: string = 'boxFight'; // Initial tab
 
-  constructor(
-    private route: ActivatedRoute,
-    private accountService: AccountService,
-    private mineSkin: MineSkinService,
-    public router: Router
-  ) {
-    // Get account data from local storage
-    this.account = JSON.parse(localStorage.getItem('account') as string);
-
-    // Redirect if account is null
-    if (this.account == null) {
-      this.router.navigate(['']);
-    }
-
-    // Default player skin URL
+  constructor(public router: Router) {
+    // 🔹 Set player skin (change username if needed)
     this.playerSkinUrl = `https://mineskin.eu/armor/bust/${this.account.data.id.username}/100.png`;
 
-    // Fetch the player's actual skin image
-    this.mineSkin.getPlayerImage(this.account.data.id.username)
-      .subscribe(
-        response => {
-          const reader = new FileReader();
-          reader.onloadend = () => {
-            const base64data = reader.result;
-            this.playerSkinUrl = base64data as string;
-          };
-          reader.readAsDataURL(new Blob([response], { type: 'image/png' }));
-        },
-        error => {
-          console.error('Error fetching player skin:', error);
-          // Fallback to default skin or handle the error as needed
-        }
-      );
-
-    // Convert timestamps to Czech date format
+    // 🔹 Convert timestamps to readable date format
     this.registrationDate = this.formatDate(this.account.data.auth_data.registration_time);
     this.lastLoginDate = this.formatDate(this.account.data.auth_data.lastlogin_time);
   }
 
   ngOnInit() {
-    this.lastLoginDate = this.formatDate(this.account.data.auth_data.lastlogin_time);
-    this.accountService.getAccount(this.account.data.id.username).subscribe(account => {
-      this.account = account;
-
-      console.log("Kontroluji account..");
-
-      if(account.data.punishment_data.reason == null)
-        return;
-
-      for (let i = 0; i < account.data.punishment_data.reason.length; i++) {
-        const type = account.data.punishment_data.type[i].trim().toLocaleLowerCase();
-        
-        if(type != "ban" && type != "ipban")
-          continue;
-
-        const toTime = Number(account.data.punishment_data.toTime[i]); // Assuming toTime is in a recognizable Date format
-
-        if(toTime < Date.now())
-          continue;
-        
-        this.punishmentTime = toTime;
-
-        if(this.punishmentTime != -1)
-          break;
-      }
-    });
+    console.log("Account Panel Loaded for user:", this.account.data.id.username);
   }
 
   toggleIpVisibility() {
@@ -106,7 +88,7 @@ export class AccountPanelComponent implements OnInit {
     return date.toLocaleDateString('cs-CZ', {
       year: 'numeric',
       month: 'long',
-      day: 'numeric' 
+      day: 'numeric'
     });
   }
 

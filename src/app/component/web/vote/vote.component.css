@@ -115,16 +115,23 @@ body {
   scale: 110%;
 }
 
-
-
 .vote-button:hover {
-  color: white;
+  color: rgb(219, 219, 219);
   border-color: rgb(2, 195, 201);
   background-color: rgba(2, 195, 201, 0.2); /* Slight hover effect */
 }
 
 .vote-button i {
   margin-left: 10px;
+}
+
+.vote-button:hover i {
+  transform: rotate(20deg); /* Adjust the degree of rotation as desired */
+  transition: transform 0.3s ease; /* Smooth transition for the rotation */
+}
+
+.vote-button i {
+  transition: transform 0.3s ease; /* Smooth transition for both hover and unhover */
 }
 
 /* Left Image Section */

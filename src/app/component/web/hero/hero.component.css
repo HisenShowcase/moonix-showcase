@@ -42,11 +42,12 @@
   font-size: 6rem;
   margin: 0;
   padding: 0;
-  color: rgb(49, 49, 49);
-  background: linear-gradient(90deg, rgb(27, 255, 242), rgb(2, 195, 201), rgb(159, 233, 240));
+  color: transparent; /* Ensures gradient is fully visible */
+  background: linear-gradient(90deg, rgb(27, 255, 242), rgb(2, 195, 201), rgb(159, 233, 240), rgb(27, 255, 242));
+  background-size: 300%; /* Larger size for a smoother transition across letters */
   background-clip: text;
   -webkit-background-clip: text;
-  animation: gradientTextAnimation 3s ease infinite;
+  animation: gradientTextAnimation 5s ease infinite; /* Slower for a smoother gradient transition */
   font-weight: 600;
   margin-bottom: 20px;
   transform: translateY(-50px);
@@ -67,15 +68,12 @@
 @keyframes gradientTextAnimation {
   0% {
     background-position: 0% 50%;
-    color: rgb(27, 255, 242);
   }
   50% {
     background-position: 100% 50%;
-    color: rgb(2, 195, 201);
   }
   100% {
     background-position: 0% 50%;
-    color: rgb(27, 255, 242);
   }
 }
 
@@ -169,9 +167,19 @@
   font-size: 40px;
   color: rgb(27, 255, 242);
   opacity: 0.8;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease;
   z-index: 10;
   cursor: pointer;
+  animation: arrowBounce 1s infinite;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
 
 .scroll-down-arrow:hover {
@@ -191,7 +199,7 @@
   margin-bottom: 50px;
   position: relative;
   display: inline-block;
-  padding-bottom: 10px; /* Space for underline */
+  padding-bottom: 10px;
 }
 
 .paragraph-field-container h2::after {
@@ -199,23 +207,23 @@
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: 65%; /* Shorter underline */
+  width: 65%;
   height: 4px;
-  border-radius: 2px; /* Rounded corners */
+  border-radius: 2px;
   background: rgb(27, 255, 242);
-  transform: translateX(-50%); /* Centered underline */
+  transform: translateX(-50%);
   animation: underlineColorChange 2s infinite;
 }
 
 @keyframes underlineColorChange {
   0% {
-    background: rgb(27, 255, 242); /* Basic blue */
+    background: rgb(27, 255, 242);
   }
   50% {
-    background: rgb(159, 233, 240); /* White blue */
+    background: rgb(159, 233, 240);
   }
   100% {
-    background: rgb(27, 255, 242); /* Basic blue */
+    background: rgb(27, 255, 242);
   }
 }
 
@@ -229,15 +237,15 @@
 .server-card {
   position: relative;
   display: inline-block;
-  border: 0px solid rgb(27, 255, 242); /* Blue border */
+  border: 0px solid rgb(27, 255, 242);
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
-  width: 375px; /* Adjust based on the image aspect ratio */
+  width: 375px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
-  background-color: #121212; /* Dark background for the card */
-  margin: 20px; /* Add gap between cards */
+  background-color: #121212;
+  margin: 20px;
 
 }
 
@@ -247,12 +255,10 @@
   cursor: pointer;
 }
 
-/* Darken Image on Hover */
 .server-card:hover .server-image {
   filter: brightness(60%);
 }
 
-/* Server Image Container */
 .server-image-container {
   position: relative;
 }
@@ -261,7 +267,7 @@
   width: 100%;
   border-radius: 10px;
   display: block;
-  transition: filter 0.3s ease; /* Smooth transition for the darkening effect */
+  transition: filter 0.3s ease;
 }
 
 .server-name-bubble {
@@ -284,13 +290,12 @@
   margin-bottom: 50px;
 }
 
-/* Text Over Image */
 .server-info {
   position: absolute;
-  bottom: 15px; /* Adjust as needed */
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 30px); /* Padding for text */
+  width: calc(100% - 30px);
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
   font-size: 1.125rem;
@@ -302,7 +307,6 @@
   opacity: 1;
 }
 
-/* Status Icon */
 .status-icon {
   position: absolute;
   top: 15px;
@@ -341,23 +345,23 @@
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: 65%; /* Shorter underline */
+  width: 65%;
   height: 4px;
-  border-radius: 2px; /* Rounded corners */
+  border-radius: 2px;
   background: rgb(27, 255, 242);
-  transform: translateX(-50%); /* Centered underline */
+  transform: translateX(-50%);
   animation: underlineColorChange 2s infinite;
 }
 
 @keyframes underlineColorChange {
   0% {
-    background: rgb(27, 255, 242); /* Basic blue */
+    background: rgb(27, 255, 242);
   }
   50% {
-    background: rgb(159, 233, 240); /* White blue */
+    background: rgb(159, 233, 240);
   }
   100% {
-    background: rgb(27, 255, 242); /* Basic blue */
+    background: rgb(27, 255, 242);
   }
 }
 
@@ -379,7 +383,6 @@
   color: #fff;
 }
 
-/* Falling Blocks Animation */
 .falling-blocks {
   position: absolute;
   top: 0;
@@ -404,14 +407,14 @@
 @keyframes fall {
   0% {
     transform: translateY(-40px) rotate(0deg);
-    color: rgba(255, 255, 255, 0.7); /* Initial color */
+    color: rgba(255, 255, 255, 0.7);
   }
   50% {
-    color: rgba(255, 255, 255, 0.7); /* Color during gradient background */
+    color: rgba(255, 255, 255, 0.7);
   }
   100% {
     transform: translateY(calc(100vh + 40px)) rotate(360deg);
-    color: rgb(27, 255, 242); /* Final blue color */
+    color: rgb(27, 255, 242);
   }
 }
 

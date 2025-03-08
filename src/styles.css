@@ -89,3 +89,40 @@ body, html {
 ::-webkit-scrollbar-corner {
   background: transparent; /* Corner color */
 }
+
+/* {
+  cursor: none !important;  Force all elements to hide the default cursor 
+}
+
+#custom-cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(89, 236, 255);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.2s ease, left 0.05s ease, top 0.05s ease, background-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.interactable-hover {
+  background-color: white;
+  transform: scale(1.5);
+}
+
+.text-hover {
+  width: 2px;
+  height: 20px;
+  background-color: rgb(2, 195, 201);
+  border-radius: 0;
+}
+
+.button-hover {
+  background-color: white;
+  transform: scale(1.5);
+}
+
+button, a {
+  cursor: none;
+}*/

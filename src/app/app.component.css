@@ -1,1 +1,31 @@
-
+@media (max-width: 1350px) {
+    /* Hide main content */
+    .container, .card-container, app-navbar, app-footer {
+      display: none;
+    }
+  
+    /* Show mobile warning only on small screens */
+    .mobile-warning {
+      display: flex !important;
+    }
+  }
+  
+  .mobile-warning {
+    display: none;  /* Hide by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(36, 36, 36);  /* Dark gray background */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    z-index: 9999;  /* Ensure it's above other elements */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  

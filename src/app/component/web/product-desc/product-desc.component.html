@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h5 class="modal-title">{{ productName }}</h5>
+  </div>
+  <div class="modal-body">
+    <p>
+        <span class="first">Cena</span> » {{ productPrice }} Kč<br>
+        <span class="first">Popisek</span> » {{ productDesc }}<br>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.dismissAll()">Zavřít</button>
+    <button type="button" class="btn btn-primary" (click)="addToCart(0)">Přidat do Košíku</button>
+  </div>

@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="title-container">
+    <h1 class="title">Zkus své štěstí</h1>
+</div>
+
+<div class="category-buttons">
+    <button (click)="startWheel()">Kolo Štěstí</button>
+    <button>Černá díra</button>
+</div>
+
+<div id="wheel" class="wheel" [style.transition]="spinTransition">
+    <ng-container *ngFor="let reward of rewards; let i = index">
+        <div class="triangle" [style.transform]="'rotate(' + (i * (360 / rewards.length)) + 'deg)'">
+            <span class="reward-text">{{ reward.name }}</span>
+        </div>
+    </ng-container>
+    <div class="arrow"></div> <!-- Arrow element -->
+</div>
+
+<button (click)="spinWheel()" class="spin-button">Spin</button>
+
+<app-footer></app-footer>

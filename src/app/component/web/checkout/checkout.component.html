@@ -1,0 +1,134 @@
+<app-navbar></app-navbar>
+<br><br><br><br><br>
+<div class="checkout-card">
+    <!-- Title with animated underline -->
+    <h1 class="checkout-title">
+        Dokončení & Platba Nákupu
+    </h1>
+
+    <!-- Products Overview Title -->
+    <h2 class="products-title">⒈ Shrnutí Produktů</h2>
+
+    <!-- Product list -->
+    <ul class="product-list">
+        <li class="product-header">
+            <span class="product-name-t">Název</span>
+            <span class="product-quantity-t">Počet kusů</span>
+            <span class="product-price-t">Cena za kus</span>
+            <span class="product-total-t">Celkem</span>
+        </li>
+        <li *ngFor="let product of products" class="product-item">
+            <span class="product-name">{{ product.name }}</span>
+            <span class="product-quantity">{{ product.quantity }}</span>
+            <span class="product-price">{{ product.pricePerItem }} Kč</span>
+            <span class="product-total">{{ product.totalPrice }} Kč</span>
+        </li>
+    </ul>
+
+    <div class="total-amount">Celková Cena » {{ formattedTotalAmount | number: '1.2-2' }} Kč</div>
+
+    <h2 class="products-title">⒉ Slevy a Poukazy</h2>
+
+    <!-- Gift card input -->
+    <div class="giftcard-section">
+        <label for="giftcard" class="giftcard-label">Číslo Poukazu</label>
+        <div class="giftcard-input">
+            <input type="text" maxlength="1" class="giftcard-part" />
+            <input type="text" maxlength="1" class="giftcard-part" />
+            <input type="text" maxlength="1" class="giftcard-part" />
+            <input type="text" maxlength="1" class="giftcard-part" />
+            <span class="giftcard-separator">-</span>
+            <input type="text" maxlength="1" class="giftcard-part" />
+            <input type="text" maxlength="1" class="giftcard-part" />
+            <input type="text" maxlength="1" class="giftcard-part" />
+            <input type="text" maxlength="1" class="giftcard-part" />
+            <button class="apply-button">Uplatnit</button> <!-- Added button -->
+        </div>
+    </div>
+
+    <h2 class="products-title">⒊ Povinné Údaje</h2>
+
+    <!-- Required Information Form -->
+    <form class="required-info-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="first-name">Jméno</label>
+                <input id="first-name" type="text" required />
+            </div>
+            <div class="form-group">
+                <label for="last-name">Přijmení</label>
+                <input id="last-name" type="text" required />
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="address">Adresa</label>
+                <input id="address" type="text" required />
+            </div>
+            <div class="form-group">
+                <label for="state">Stát</label>
+                <input id="state" type="text" required />
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input id="email" type="email" required />
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefoní Číslo</label>
+                <input id="phone" type="tel" pattern="\+?\d{9,13}" required />
+            </div>
+        </div>
+    </form>
+
+    <h2 class="products-title">⒋ Platební Brána</h2>
+
+
+    <!-- Payment Gateway Overview -->
+<!-- Payment Gateway Overview -->
+<ul class="payment-gateway-list">
+    <li class="payment-gateway-header">
+        <span class="payment-gateway-name-t">Název Brány</span>
+        <span class="payment-gateway-conditions-t">Podmínky</span>
+        <span class="payment-gateway-fee-t">Poplatek</span>
+        <span class="payment-gateway-price-t">Cena</span>
+        <span class="payment-gateway-pay-t">Platit</span> <!-- New header -->
+    </li>
+    <li class="payment-gateway-item">
+        <span class="payment-gateway-name">PayPal</span>
+        <span class="payment-gateway-conditions">-</span>
+        <span class="payment-gateway-fee">3%</span>
+        <span class="payment-gateway-price">{{ (formattedTotalAmount + (formattedTotalAmount * 0.03)) | number: '1.2-2' }} Kč</span>
+        <button class="payment-option" (click)="openPaypalModal()">Platit</button> <!-- New button -->
+    </li>
+    <li class="payment-gateway-item">
+        <span class="payment-gateway-name">Debitní Karta</span>
+        <span class="payment-gateway-conditions">-</span>
+        <span class="payment-gateway-fee">0%</span>
+        <span class="payment-gateway-price">{{ formattedTotalAmount | number: '1.2-2' }} Kč</span>
+        <button class="payment-option" (click)="openPaypalModal()">Platit</button> <!-- New button -->
+    </li>
+    <li class="payment-gateway-item">
+        <span class="payment-gateway-name">PaySafeCard</span>
+        <span class="payment-gateway-conditions">Minimální částka 120 Kč</span>
+        <span class="payment-gateway-fee">15%</span>
+        <span class="payment-gateway-price">{{ (formattedTotalAmount + (formattedTotalAmount * 0.15)) | number: '1.2-2' }} Kč</span>
+        <button class="payment-option" (click)="openPaySafeModal()">Platit</button> <!-- New button -->
+    </li>
+</ul>
+
+<h2 class="products-title">⒌ Jedná se o dárek?</h2>
+
+<form class="required-info-form">
+    <label for="nick">Pokud tyto předměty chceš poslat kamarádovi, napiš sem jeho herní nick.</label>
+    <input id="nick" type="text" required />
+</form>
+
+    
+</div>
+
+<br><br><br><br><br>
+<app-footer></app-footer>

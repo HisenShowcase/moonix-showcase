@@ -70,7 +70,7 @@ export class FaqComponent {
       ]
     },
     {
-      name: 'BoxFight',
+      name: 'ElytraWars',
       faqs: [
         {
           question: 'Je týmování mezi hráči povoleno?',
@@ -79,7 +79,7 @@ export class FaqComponent {
         },
         {
           question: 'K čemu slouží EXP Levely a jak je získávat?',
-          answer: 'Za EXP Levely si lze zakoupit mnoho různých předmětů napříč celým BoxFight serverem (Jídlo, Speciální předměty, Odemykání evolucí, Ruleta, a mnoho dalšího).<br><br> Získavat je lze ze zabíjení hráčů, plnění úkolů, beden, mini-eventů, vrtáku a dále!',
+          answer: 'Za EXP Levely si lze zakoupit mnoho různých předmětů napříč celým ElytraWars serverem (Jídlo, Speciální předměty, Odemykání evolucí, Ruleta, a mnoho dalšího).<br><br> Získavat je lze ze zabíjení hráčů, plnění úkolů, beden, mini-eventů, vrtáku a dále!',
           open: false
         },
         {
@@ -103,8 +103,8 @@ export class FaqComponent {
           open: false
         },
         {
-          question: 'Co je to BoxPass a v čem je BoxPass+ lepší?',
-          answer: 'BoxPass je formou Battle Passu přizpůsobený našemu BoxFightu! Každých X Úrovní si můžete vyzvednout odměnu. Nové úrovně získáváte plněním BoxPass úkolů.<br><br>V případě vlastnění BoxPass+ vás čeká odměna k vyzvednutí na každé úrovni! Nachází se zde unikátní předměty, které lze získat pouze prostřednictvím našeho obchodu!',
+          question: 'Co je to MoonPass a v čem je MoonPass+ lepší?',
+          answer: 'MoonPass je formou Battle Passu přizpůsobený našemu ElytraWars! Každých X Úrovní si můžete vyzvednout odměnu. Nové úrovně získáváte plněním MoonPass úkolů.<br><br>V případě vlastnění MoonPass+ vás čeká odměna k vyzvednutí na každé úrovni! Nachází se zde unikátní předměty, které lze získat pouze prostřednictvím našeho obchodu!',
           open: false
         },
         {
@@ -112,7 +112,16 @@ export class FaqComponent {
           answer: 'V takovém případě doporučujeme nahrávat svůj herní zažitek po celou dobu hraní u nás, aby jste měli případný důkaz, který můžete použít v ticketu na Discordu jako důkaz!',
           open: false
         },
-        // Add more BoxFight-specific FAQs here
+      ]
+    },
+    {
+      name: 'BoxPass',
+      faqs: [
+        {
+          question: 'Již Brzy',
+          answer: '...',
+          open: false
+        },
       ]
     },
     {
@@ -123,7 +132,6 @@ export class FaqComponent {
           answer: '...',
           open: false
         },
-        // Add more Survival-specific FAQs here
       ]
     }
   ];

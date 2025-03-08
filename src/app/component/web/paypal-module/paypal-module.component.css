@@ -1,0 +1,83 @@
+.modal-header {
+    background-color: #1b1b1b;
+    border: 0px solid rgb(27, 255, 242);
+    color: white;
+    border-bottom: none;
+
+  }
+  
+  .modal-body {
+    background-color: #1b1b1b;
+    color: rgba(255, 255, 255, 0.9);
+    border: 0px;
+    border: 0px solid rgb(27, 255, 242);
+
+  }
+  
+  .modal-footer {
+    background-color: #1b1b1b;
+    border-top: none;
+    border: 0px solid rgb(27, 255, 242);
+  }
+
+  .first {
+    color: rgb(27, 255, 242);
+    font-weight: 700;
+  }
+  
+  .btn-close {
+    color: white;
+  }
+  
+  .form-label {
+    color: rgb(27, 255, 242);
+    font-weight: 600;
+  }
+  
+  .form-control {
+    background-color: #333;
+    border: 0px solid #444;
+    color: white;
+  }
+  
+  .form-control:focus {
+    border-color: rgb(27, 255, 242);
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .btn-secondary {
+    background-color: #333;
+    border: 0px solid #444;
+    color: white;
+    border-radius: 15px;
+    font-weight: 700;
+  }
+  
+  .btn-primary {
+    background-color: rgb(27, 255, 242);
+    border: 0px solid #444;
+    color: #121212;
+    border-radius: 15px;
+    font-weight: 700;
+    transition: color 0.5s easy;
+  }
+
+  .btn-primary:hover {
+    color: #444;
+  }
+
+  .btn-secondary:hover {
+    color: rgb(27, 255, 242);
+  }
+  
+  .alert-danger {
+    background-color: #b22222;
+    color: white;
+    border: none;
+  }
+  
+  .form-control::placeholder {
+    color: rgb(112, 112, 112);
+  }
+  

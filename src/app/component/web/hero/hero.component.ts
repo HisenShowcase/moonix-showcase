@@ -8,15 +8,15 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule],  // Import FormsModule to use ngModel
+  imports: [CommonModule, FormsModule],
 })
 export class HeroComponent implements AfterViewInit {
-  isCopied = false; // Track whether the IP has been copied
-  currentIP = 'play.moonix.cz'; // Default IP address
-  selectedVote: string | null = null; // Track selected vote
-  minecraftNick = ''; // Track Minecraft Nick
+  isCopied = false;
+  currentIP = 'play.moonix.cz';
+  selectedVote: string | null = null;
+  minecraftNick = '';
 
-  constructor(private toastr: ToastrService) {} // Inject ToastrService
+  constructor(private toastr: ToastrService) {}
 
   ngAfterViewInit(): void {
     this.applyRandomRotations();
@@ -35,8 +35,8 @@ export class HeroComponent implements AfterViewInit {
     this.currentIP = this.getRandomIP(ipAddresses);
 
     this.copyToClipboard(this.currentIP).then(() => {
-      this.isCopied = true; // Set copied state to true and keep it
-      this.showSuccessToast("IP zkopírována do schránky!"); // Show success toast
+      this.isCopied = true;
+      this.showSuccessToast("IP zkopírována do schránky!");
     }).catch(err => {
       console.error('Failed to copy IP address:', err);
     });
@@ -51,7 +51,7 @@ export class HeroComponent implements AfterViewInit {
   }
 
   private showSuccessToast(message: string): void {
-    this.toastr.success(message); // Display toast message
+    this.toastr.success(message);
   }
 
   redirectToDiscord() {
@@ -59,19 +59,18 @@ export class HeroComponent implements AfterViewInit {
   }
 
   private navigateToDiscord(): void {
-    window.open('https://discord.moonix.cz', '_blank');  // Open in a new tab
+    window.open('https://discord.moonix.cz', '_blank');
   }
 
   selectVote(vote: string) {
-    this.selectedVote = vote; // Set the selected vote
+    this.selectedVote = vote;
   }
 
   submitVote() {
     if (this.minecraftNick.trim()) {
-      this.showSuccessToast(`Děkujeme za hlasování, ${this.minecraftNick}!`); // Display success toast
-      // Here you would typically send the vote to a server or handle it as needed
+      this.showSuccessToast(`Děkujeme za hlasování, ${this.minecraftNick}!`);
     } else {
-      this.toastr.error("Prosím zadejte svůj Minecraft Nick."); // Show error toast if no nick is provided
+      this.toastr.error("Prosím zadejte svůj Minecraft Nick.");
     }
   }
 }

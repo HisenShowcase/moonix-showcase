@@ -1,0 +1,167 @@
+.modal-header {
+    background-color: #1b1b1b;
+    border: 0px solid rgb(27, 255, 242);
+    color: white;
+    border-bottom: none;
+}
+  
+.modal-title{
+    color: white;
+    font-size: 25px;
+    margin: 0 0;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #1b1b1b;
+    justify-content: flex-start;
+}
+
+.aware{
+    color: rgb(27, 255, 242);
+    font-weight: 800;
+    font-size: 15px;
+    padding: 0 0;
+    margin: 0px 0px;
+    margin-bottom: 18px;
+}
+
+.filling{
+    color: rgb(134, 134, 134);
+    font-weight: 900;
+    padding: 0 0;
+    margin: 5px 0px;
+
+}
+
+.order{
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 16px;
+    margin: 5px 0px;
+
+}
+
+.order-numbers{
+    color: rgb(27, 255, 242);
+
+}
+
+h5{
+    color: rgb(27, 255, 242);
+    margin-top: 25px;
+
+}
+  
+.modal-footer {
+    background-color: #1b1b1b;
+    border-top: none;
+    border: 0px solid rgb(27, 255, 242);
+    justify-content: flex-start; /* Align the button to the left */
+    margin: 0 0;
+
+}
+
+.first {
+    color: rgb(27, 255, 242);
+    font-weight: 700;
+}
+  
+.btn-close {
+    color: white;
+}
+  
+.form-label {
+    color: rgb(27, 255, 242);
+    font-weight: 600;
+}
+  
+.form-control {
+    background-color: #333;
+    border: 0px solid #444;
+}
+  
+.form-control:focus {
+    border-color: rgb(27, 255, 242);
+    box-shadow: none;
+    outline: none;
+}
+
+.btn btn-primary{
+    margin: 0 0;
+}
+  
+.btn-secondary {
+    background-color: #333;
+    border: 0px solid #444;
+    color: white;
+    border-radius: 15px;
+    font-weight: 700;
+}
+  
+.btn-primary {
+    background-color: rgb(27, 255, 242);
+    border: 0px solid #444;
+    color: #121212;
+    border-radius: 15px;
+    font-weight: 700;
+    transition: color 0.5s ease;
+}
+
+.btn-primary:hover {
+    color: #444;
+}
+
+.btn-secondary:hover {
+    color: rgb(27, 255, 242);
+}
+  
+.alert-danger {
+    background-color: #b22222;
+    color: white;
+    border: none;
+}
+  
+.form-control::placeholder {
+    color: rgb(112, 112, 112);
+}
+
+.giftcard-section {
+    margin-top: 20px;
+}
+
+.giftcard-label {
+    color: rgb(27, 255, 242); /* Blue color for label */
+    font-weight: bold; /* Bold label */
+}
+
+.giftcard-input {
+    display: flex;
+    align-items: center; /* Center align items */
+    gap: 3px; /* Space between inputs */
+    margin-top: 5px; /* Space above input fields */
+}
+
+.giftcard-input input {
+    width: 25px; /* Width for each part of the gift card input */
+    padding: 8px;
+    color: white;
+    background-color: #333;
+    border: 1px solid transparent; /* Default transparent border */
+    border-radius: 5px;
+    text-align: center; /* Center text */
+}
+
+.giftcard-input input:focus {
+    border: 1px solid transparent; /* Default transparent border */
+    border-color: rgb(27, 255, 242); /* Blue border when focused */
+    outline: none; /* Remove the default focus outline */
+}
+
+.giftcard-separator {
+    color: white; /* Color for the separator */
+    font-size: 20px; /* Font size for the separator */
+}

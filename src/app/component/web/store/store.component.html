@@ -1,0 +1,117 @@
+<app-navbar></app-navbar>
+
+<div class="title-container">
+  <h1 class="title">Oficiální obchod</h1>
+</div>
+
+<div class="store-container">
+  <div class="category-card">
+    <div class="server-name-bubble-category">
+      <span><i class="fa-solid fa-shield-halved"></i></span>
+    </div>
+    <h3>Kategorie</h3>
+    <ul>
+      <ng-container *ngFor="let category of categories; let i = index">
+        <li 
+          (click)="selectCategory(category.id)"
+          [ngClass]="{ 'active-category': selectedCategoryId === category.id }" 
+          class="category-card-main">
+          <span class="category-icon"><i class="{{ category.icon }}"></i></span>
+          <span class="category-text">{{ category.name }}</span>
+
+          <div class="subcategory-container" [ngClass]="{ 'show': selectedCategoryId === category.id }"> 
+            <ul class="subcategory-list">
+              <li 
+                *ngFor="let subcategory of category.subcategories" 
+                (click)="selectSubcategory(subcategory.id); $event.stopPropagation()"
+                [ngClass]="{ 'active-subcategory': selectedSubcategoryId === subcategory.id }">
+                <span class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></span> 
+                {{ subcategory.name }}
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Non-clickable separator between Magma and Ostatní -->
+        <li *ngIf="i === 2" class="separator">----</li>
+      </ng-container>
+    </ul>
+  </div>
+
+  <div class="product-display-card">
+    <div class="server-name-bubble-product">
+        <span><i class="fa-solid fa-box"></i></span>
+    </div>
+    <h3 class="product-title">Produkty</h3>
+
+    <div class="product-list">
+        <!-- Show introductory message if no category or subcategory is selected -->
+        <div *ngIf="!selectedCategoryId && !selectedSubcategoryId">
+            <h4 style="align-self: center" class="welcome-text">Vítejte v Internetovém Obchodě Serveru Moonix</h4>
+            <p class="welcome-text">HALLOWEEN SLEVY NA CELÝ OBCHOD 20%!</p>
+            <p class="welcome-text">Pro platbu s PaySafeCard si prosím založte tiket na našem discord serveru discord.moonix.cz</p>
+            <p class="welcome-text">Děkujeme, že jste se rozhodli podpořit náš server...</p>
+        </div>
+
+        <!-- Show 'no products' message if subcategory is selected but no products are available -->
+        <div *ngIf="getFilteredProducts().length === 0 && selectedSubcategoryId">
+            V této kategorii nejsou žádné věci.
+        </div>
+
+        <!-- Display products if available -->
+        <ng-container *ngFor="let product of getFilteredProducts()">
+            <div class="product-card">
+                <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image" />
+                <h3 class="product-name">{{ product.name }}</h3>
+                <p class="product-price">
+                    <span *ngIf="product.originalPrice" class="original-price">{{ product.originalPrice }} Kč</span>
+                    <span class="sale-price">{{ product.displayPrice }} Kč</span>
+                </p>
+                <button class="info-button" (click)="openProductModal(product.id)">
+                    Více Informací
+                </button>
+                <button class="cart-button" (click)="addToCart(product.id)">
+                    <i class="fa-solid fa-cart-plus"></i>
+                </button>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<div class="shopping-cart-card">
+  <div class="server-name-bubble-cart">
+    <span><i class="fa-solid fa-shopping-cart"></i></span>
+  </div>
+  <h3 class="cart-title">Košík</h3>
+
+  <div *ngIf="cart.length > 0">
+    <ul style="list-style: none; padding: 0; margin-bottom: 10;">
+      <li *ngFor="let item of cart">
+        <span class="arrow">»</span>
+        {{ item.product.name }} - ({{ item.quantity }}x)
+        <button class="remove-button" (click)="removeFromCart(item.product.id)">
+          <i class="fa-solid fa-times"></i>
+        </button>
+      </li>
+    </ul>
+    
+    <p class="first-p" style="margin-top: 10px;"><span class="first-2">Počet Produktů</span> » {{ cart.length }}x</p>
+    <p class="first-p" style="margin-top: 4px;"><span class="first-2">Celková Částka</span> » {{ totalPrice | number: '1.2-2' }} Kč</p>
+    
+    <div class="pay-button-wrapper">
+      <button class="pay-button" (click)="goToCheckoutRedirect()">Dokončit Nákup</button>
+    </div>
+  </div>
+  <div *ngIf="cart.length === 0">
+    <p>Nákupní košík je prázdný!</p>
+  </div>
+  
+  <ng-template #emptyCart>
+    <p>Košík je prázdný.</p>
+  </ng-template>
+</div>
+</div>
+
+<br><br><br><br><br><br><br><br><br>
+
+<app-footer></app-footer>

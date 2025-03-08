@@ -20,18 +20,15 @@
   </div>
 </section>
 
-<!-- Scroll Down Arrow -->
 <div class="scroll-down-arrow">
   <i class="fas fa-arrow-down"></i>
 </div>
 
-<!-- Servers Section -->
 <section class="servers-section">
   <div class="paragraph-field-container">
     <h2>NAŠE SERVERY</h2>
   </div>
   <div class="servers-cards">
-    <!-- Server Card 1 -->
     <div class="server-card">
       <div class="server-image-container">
         <img src="https://i.imgur.com/XkuXZWR.png" alt="Server 1" class="server-image">
@@ -43,7 +40,6 @@
         <p>Ten nejlepší BoxFight, který můžeš jen najít! Máš rád grind? Toto je server přímo pro tebe</p>
       </div>
     </div>
-    <!-- Server Card 2 -->
     <div class="server-card">
       <div class="server-image-container">
         <img src="https://i.imgur.com/e9HXyUG.png" alt="Server 2" class="server-image">
@@ -55,7 +51,6 @@
         <p>Skoro 2 roky připravovaný Survival na kterém si vždy najdeš to svoje. Hraní tady tě neomrzí!</p>
       </div>
     </div>
-    <!-- Server Card 3 -->
     <div class="server-card">
       <div class="server-image-container">
         <img src="https://i.imgur.com/4fZoLer.png" alt="Server 3" class="server-image">
@@ -75,11 +70,9 @@
       <h2>RECENZE HRÁČŮ</h2>
   </div>
   <div id="reviews-container">
-      <!-- Reviews will be loaded here -->
   </div>
 </section>
 
-<!-- Falling Blocks -->
 <div class="falling-blocks">
   <i class="fas fa-cube block"></i>
   <i class="fas fa-cube block"></i>
@@ -89,7 +82,6 @@
 </div>
 
 <script>
-  // Function to fetch and display reviews
   async function fetchReviews() {
       try {
         console.log("Vyvolavas se?");
@@ -98,13 +90,11 @@
 
           const reviewsContainer = document.getElementById('reviews-container');
 
-          // Iterate over the reviews and create HTML for each
           data.forEach(review => {
             console.log("Test");
               const reviewCard = document.createElement('div');
               reviewCard.className = 'review-card';
 
-              // Create the content for each review
               reviewCard.innerHTML = `
                   <h3>${review.username}</h3>
                   <p>Hodnocení: ${'⭐'.repeat(review.rating)}</p>
@@ -113,7 +103,6 @@
                   ${review.reply ? `<p><em>Odpověď: ${review.reply}</em></p>` : ''}
               `;
 
-              // Append review card to the container
               reviewsContainer.appendChild(reviewCard);
           });
 
@@ -122,6 +111,5 @@
       }
   }
 
-  // Fetch reviews on page load
   window.onload = fetchReviews();
 </script>

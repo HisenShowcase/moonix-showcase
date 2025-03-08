@@ -1,0 +1,126 @@
+.title-container {
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 25px;
+}
+
+.title {
+    font-size: 3.0rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 65%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgb(255, 0, 0);
+    transform: translateX(-50%);
+    animation: underlineColorChange 2s infinite;
+}
+
+@keyframes underlineColorChange {
+    0% {
+        background: rgb(27, 255, 242);
+    }
+    50% {
+        background: rgb(159, 233, 240);
+    }
+    100% {
+        background: rgb(27, 255, 242);
+    }
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.category-buttons button {
+    background-color: transparent;
+    border: 2px solid rgb(27, 255, 242);
+    color: rgb(27, 255, 242);
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 17px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+.category-buttons button.active {
+    background-color: rgb(2, 195, 201);
+    color: rgb(27, 27, 27);
+}
+
+.category-buttons button:not(.active) {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wheel {
+    position: relative;
+    width: 500px; /* Increased size */
+    height: 500px; /* Increased size */
+    border-radius: 50%;
+    border: 8px solid rgb(27, 255, 242); /* Circle border */
+    overflow: hidden;
+    margin: 0 auto; /* Center the wheel */
+    transition: transform 0.5s ease-out; /* Smooth transition */
+}
+
+.triangle {
+    position: absolute;
+    width: 50%; /* Adjust to create triangle shape */
+    height: 50%; /* Adjust to create triangle shape */
+    background: transparent;
+    overflow: hidden;
+    clip-path: polygon(100% 100%, 100% 0, 0 100%); /* Create a triangle */
+    border-right: 4px solid rgb(27, 255, 242); /* Border for each piece */
+    transform-origin: 100% 100%; /* Set rotation point */
+}
+
+.reward-text {
+    position: absolute;
+    bottom: 30%; /* Adjusted for proper centering */
+    left: 50%; /* Center text horizontally */
+    transform: translate(-50%, 50%) rotate(90deg); /* Point towards center */
+    color: white; /* Change text color as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.arrow {
+    position: absolute;
+    top: -30px; /* Position the arrow above the wheel */
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid red; /* Arrow color */
+    z-index: 10; /* Ensure the arrow is above the wheel */
+}
+
+.spin-button {
+    display: block;
+    margin: 20px auto; /* Center the button */
+    padding: 10px 20px;
+    background-color: rgb(27, 255, 242);
+    border: none;
+    border-radius: 25px;
+    color: black;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.spin-button:hover {
+    background-color: rgb(2, 195, 201);
+}

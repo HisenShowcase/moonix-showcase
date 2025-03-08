@@ -12,16 +12,26 @@
         <div class="sparkles-wrapper">
           <a href="/store" class="obchod" (click)="navigateTo('/store')">OBCHOD</a>
         </div>
-      </li>      <li><a href="/vote">Hlasovat</a></li>
+      </li>
+      <li><a href="/vote">Hlasovat</a></li>
       <li><a href="/vip">VIP</a></li>
-      <li><a href="/faq" class="faq">FAQ</a></li>
+      
+      <!-- Updated "Více" with vicedrop class names -->
+      <li class="vicedrop" (mouseenter)="toggleVicedrop(true)" (mouseleave)="toggleVicedrop(false)">
+        <a href="#" class="vicedrop-toggle">
+          Více <i [class]="isVicedropOpen ? 'fas fa-chevron-down' : 'fas fa-chevron-down'" class="chevron"></i>
+        </a>
+        <div *ngIf="isVicedropOpen" class="vicedrop-menu">
+          <a href="/faq">FAQ</a>
+          <a href="/nabor">nábor</a>
+        </div>
+      </li>
     </ul>
   </div>
 
   <div class="navbar-right">
     <a *ngIf="!isLogged()" class="prihlaseni" (click)="openLoginPopup()">Přihlásit</a>
 
-    <!-- Profile and Panel buttons shown when logged in -->
     <div *ngIf="isLogged()" class="user-actions">
       <a class="btn btn-panel" (click)="openPanel()">Panel</a>
       <div class="profile-container">

@@ -4,11 +4,11 @@
 <div class="modal-body">
   <form>
     <div class="mb-3">
-      <label for="minecraftNick" class="form-label">Minecraft Nick</label>
+      <label for="minecraftNick" class="form-label">Minecraft Nick (vyplňte - H1senk0)</label>
       <input type="text" class="form-control" id="minecraftNick" [(ngModel)]="playerName" name="playerName" placeholder="Zadej svůj herní nick" required />
     </div>
     <div class="mb-3">
-      <label for="password" class="form-label">Heslo</label>
+      <label for="password" class="form-label">Heslo (vyplňte - 1234)</label>
       <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="Zadej své heslo k účtu" required />
     </div>
     <div *ngIf="errorMessage" class="alert alert-danger" role="alert">

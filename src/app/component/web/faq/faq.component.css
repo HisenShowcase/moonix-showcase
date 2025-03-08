@@ -42,7 +42,6 @@ body {
     animation: underlineColorChange 2s infinite;
 }
 
-/* Underline Animation */
 @keyframes underlineColorChange {
     0% {
         background: rgb(27, 255, 242);
@@ -55,7 +54,6 @@ body {
     }
 }
 
-/* Category Buttons */
 .category-buttons {
     display: flex;
     justify-content: center;
@@ -68,7 +66,10 @@ body {
     color: rgb(27, 255, 242);
     border-radius: 25px;
     padding: 10px 20px;
+    font-weight: 700;
     font-size: 16px;
+    background-size: cover; /* Ensure the image covers the button */
+
     cursor: pointer;
     margin: 0 10px;
     transition: color 0.3s, border-color 0.3s, background-color 0.3s;
@@ -86,16 +87,19 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Apply the background images for inactive buttons */
-.category-buttons button:nth-of-type(1):not(.active) {
+.category-buttons button:not(.active) {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.category-buttons button:not(.active):nth-of-type(1) {
     background-image: url('https://i.imgur.com/t3jYQCl.png');
 }
 
-.category-buttons button:nth-of-type(2):not(.active) {
+.category-buttons button:not(.active):nth-of-type(2) {
     background-image: url('https://i.imgur.com/4fZoLer.png');
 }
 
-.category-buttons button:nth-of-type(3):not(.active) {
+.category-buttons button:not(.active):nth-of-type(3) {
     background-image: url('https://i.imgur.com/XkuXZWR.png');
 }
 

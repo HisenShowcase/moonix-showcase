@@ -8,7 +8,10 @@ import { VipComponent } from './component/web/vip/vip.component';
 import { VoteComponent } from './component/web/vote/vote.component';
 import { FaqComponent } from './component/web/faq/faq.component';
 import { StoreComponent } from './component/web/store/store.component';
-
+import { GamesComponent } from './component/web/games/games.component';
+import { CheckoutComponent } from './component/web/checkout/checkout.component';
+import { AdminPanelComponent } from './component/web/admin-panel/admin-panel.component';
+import { NaborComponent } from './component/web/nabor/nabor.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,11 +21,11 @@ export const routes: Routes = [
   { path: 'vip', component: VipComponent},
   { path: 'store', component: StoreComponent},
   { path: 'vote', component: VoteComponent},
-  { path: 'faq', component: FaqComponent}
-
-
-
-
+  { path: 'faq', component: FaqComponent},
+  { path: 'checkout', component: CheckoutComponent},
+  { path: 'admin-panel', component: AdminPanelComponent},
+  { path: 'nabor', component: NaborComponent},
+  { path: 'games', component: GamesComponent}
 ];
 
 @NgModule({

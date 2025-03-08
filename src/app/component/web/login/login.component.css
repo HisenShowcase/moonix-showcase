@@ -1,16 +1,16 @@
 .modal-header {
-  background-color: #121212;
+  background-color: #1b1b1b;
   color: white;
   border-bottom: none;
 }
 
 .modal-body {
-  background-color: #121212;
+  background-color: #1b1b1b;
   color: rgba(255, 255, 255, 0.7);
 }
 
 .modal-footer {
-  background-color: #121212;
+  background-color: #1b1b1b;
   border-top: none;
 }
 
@@ -38,14 +38,17 @@
 
 .btn-secondary {
   background-color: #333;
-  border: 1px solid #444;
+  border: 0px solid #444;
   color: white;
+  border-radius: 15px;
+
 }
 
 .btn-primary {
   background-color: rgb(27, 255, 242);
-  border: 1px solid #444;
+  border: 0px solid #444;
   color: #121212;
+  border-radius: 15px;
 }
 
 .alert-danger {

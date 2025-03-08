@@ -1,0 +1,316 @@
+.checkout-card {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #121212;
+    border-radius: 25px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.checkout-title {
+    font-size: 2.5rem;
+    text-align: center;
+    position: relative;
+    color: white;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    text-transform: uppercase;
+}
+
+.checkout-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 30%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgb(255, 0, 0);
+    transform: translateX(-50%);
+    animation: underlineColorChange 2s infinite;
+}
+
+.products-title {
+    font-size: 1.5rem;
+    color: white; /* Title color */
+    margin-top: 75px; /* Space above the title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(27, 255, 242); /* Blue color for headers */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.product-name {
+    color: rgb(255, 255, 255); /* Blue color for product name */
+    font-weight: bold;
+    width: 30%; /* Adjust width as needed */
+}
+
+.product-name-t {
+    color: rgb(27, 255, 242); /* Blue color for product name */
+    font-weight: bold;
+    width: 30%; /* Adjust width as needed */
+}
+
+.product-quantity,
+.product-price,
+.product-total {
+    color: white; /* White color for product price and quantity */
+    font-weight: bold;
+    width: 20%; /* Ensure columns are evenly spaced */
+    text-align: right; /* Align text to the right for better layout */
+}
+
+.total-amount {
+    font-weight: bold;
+    color: rgb(27, 255, 242); /* Blue color for total amount */
+    text-align: right; /* Align text to the right */
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.giftcard-section {
+    margin-top: 20px;
+    text-align: left; /* Align text to the left */
+}
+
+.giftcard-label {
+    color: rgb(27, 255, 242); /* Blue color for label */
+    font-weight: bold; /* Bold label */
+}
+
+.giftcard-input {
+    display: flex;
+    align-items: center; /* Center align items */
+    gap: 5px; /* Space between inputs */
+    margin-top: 5px; /* Space above input fields */
+}
+
+.giftcard-input input {
+    width: 40px; /* Width for each part of the gift card input */
+    padding: 8px;
+    color: white;
+    background-color: #1e1e1e;
+    border: 1px solid transparent; /* Default transparent border */
+    border-radius: 5px;
+    text-align: center; /* Center text */
+}
+
+.giftcard-input input:focus {
+    border: 1px solid transparent; /* Default transparent border */
+    border-color: rgb(27, 255, 242); /* Blue border when focused */
+    outline: none; /* Remove the default focus outline */
+}
+
+.giftcard-separator {
+    color: white; /* Color for the separator */
+    font-size: 20px; /* Font size for the separator */
+}
+
+.other-player-section {
+    margin-top: 20px;
+}
+
+.other-player-section label {
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(27, 255, 242);
+}
+
+.other-player-input {
+    margin-top: 10px;
+}
+
+.required-info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap between rows */
+    margin-top: 20px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between; /* Space out the inputs evenly */
+}
+
+.form-group {
+    flex: 1; /* Allow the input fields to grow evenly */
+    margin-right: 10px; /* Space between form groups */
+}
+
+.form-group:last-child {
+    margin-right: 0; /* Remove margin on the last child */
+}
+
+.required-info-form input {
+    padding: 8px;
+    border: 1px solid transparent; /* Remove the default border */
+    border-radius: 5px;
+    color: white;
+    background-color: #1e1e1e;
+    width: 100%; /* Full width of the group */
+}
+
+.required-info-form input:focus {
+    border-color: rgb(27, 255, 242); /* Blue border on focus */
+    outline: none; /* Remove the default focus outline */
+}
+
+.required-info-form label {
+    color: rgb(27, 255, 242); /* Blue color for label */
+    font-weight: bold; /* Bold label */
+}
+
+.payment-gateway {
+    margin-top: 20px;
+    padding: 10px;
+    background: #1e1e1e; /* Background color for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.payment-gateway-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(27, 255, 242); /* Blue color for headers */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.payment-gateway-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.payment-gateway-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.payment-gateway-name,
+.payment-gateway-conditions,
+.payment-gateway-price {
+    color: white; /* White color for payment gateway details */
+    width: 25%; /* Ensure columns are evenly spaced */
+    text-align: left; /* Align text to the left for better readability */
+}
+
+.payment-gateway-fee{
+    color: white; /* White color for payment gateway details */
+    width: 0.8%;
+    text-align: left; /* Align text to the left for better readability */
+}
+
+.payment-gateway-pay-t{
+    color: rgb(27, 255, 242);
+    text-align: left; /* Align text to the left for better readability */
+    width: 3.5%; /* Ensure columns are evenly spaced */
+}
+
+
+.payment-gateway-name-t{
+    color: rgb(27, 255, 242);
+    text-align: left; /* Align text to the left for better readability */
+    width: 25%; /* Ensure columns are evenly spaced */
+}
+
+.payment-gateway-conditions-t{
+    color: rgb(27, 255, 242);
+    text-align: left; /* Align text to the left for better readability */
+    width: 25%; /* Ensure columns are evenly spaced */
+}
+
+.payment-gateway-fee-t{
+    color: rgb(27, 255, 242);
+    text-align: left; /* Align text to the left for better readability */
+    width: 1%;
+
+}
+
+.payment-gateway-price-t{
+    color: rgb(27, 255, 242);
+    text-align: right; /* Align text to the left for better readability */
+    width: 25%; /* Ensure columns are evenly spaced */
+
+}
+.payment-gateway-price {
+    text-align: right; /* Align price to the right for better layout */
+}
+
+.payment-option {
+    background-color: rgb(27, 255, 242);
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-option:hover {
+    background-color: rgb(20, 204, 194);
+}
+
+.apply-button {
+    background-color: rgb(27, 255, 242);
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+    background-color: rgb(20, 204, 194);
+}
+
+@keyframes underlineColorChange {
+    0% { background: rgb(27, 255, 242); }
+    50% { background: rgb(159, 233, 240); }
+    100% { background: rgb(27, 255, 242); }
+}
+
+.payment-option {
+    background-color: gray; /* Default gray background */
+    color: white; /* Text color */
+    border: none;
+    padding: 3px 8px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: color 0.2s ease;
+
+}
+
+.payment-option:hover {
+    background-color: rgb(27, 255, 242); /* Change to blue on hover */
+    color: #121212;
+}
