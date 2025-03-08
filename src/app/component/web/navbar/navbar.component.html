@@ -6,15 +6,15 @@
   <div class="navbar-center">
     <ul class="nav-list">
       <li><a href="/" (click)="navigateTo('/')">Domů</a></li>
-      <li><a href="/pravidla">Pravidla</a></li>
-      <li><a href="/team">A-Team</a></li>
+      <li><a href="moonix-showcase/pravidla">Pravidla</a></li>
+      <li><a href="moonix-showcase/team">A-Team</a></li>
       <li>
         <div class="sparkles-wrapper">
-          <a href="/store" class="obchod" (click)="navigateTo('/store')">OBCHOD</a>
+          <a href="moonix-showcase/store" class="obchod" (click)="navigateTo('/store')">OBCHOD</a>
         </div>
       </li>
-      <li><a href="/vote">Hlasovat</a></li>
-      <li><a href="/vip">VIP</a></li>
+      <li><a href="moonix-showcase/vote">Hlasovat</a></li>
+      <li><a href="moonix-showcase/vip">VIP</a></li>
       
       <!-- Updated "Více" with vicedrop class names -->
       <li class="vicedrop" (mouseenter)="toggleVicedrop(true)" (mouseleave)="toggleVicedrop(false)">
@@ -22,8 +22,8 @@
           Více <i [class]="isVicedropOpen ? 'fas fa-chevron-down' : 'fas fa-chevron-down'" class="chevron"></i>
         </a>
         <div *ngIf="isVicedropOpen" class="vicedrop-menu">
-          <a href="/faq">FAQ</a>
-          <a href="/nabor">nábor</a>
+          <a href="moonix-showcase/faq">FAQ</a>
+          <a href="moonix-showcase/nabor">nábor</a>
         </div>
       </li>
     </ul>

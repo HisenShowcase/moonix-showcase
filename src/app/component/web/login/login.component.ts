@@ -59,7 +59,7 @@ export class LoginComponent {
     this.modalRef.dismissAll();
   
     // Navigate to account panel
-    this.router.navigate(["/account-panel"]).then(() => {
+    this.router.navigate(["moonix-showcase/account-panel"]).then(() => {
       // Wait 0.5s before refreshing the page
       setTimeout(() => {
         window.location.reload();
