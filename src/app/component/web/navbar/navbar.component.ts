@@ -28,7 +28,7 @@ export class NavbarComponent {
   }
 
   openPanel() {
-    this.router.navigate(["/account-panel"]);
+    this.router.navigate(["moonix-showcase/account-panel"]);
   }
 
   logout() {
@@ -45,9 +45,11 @@ export class NavbarComponent {
     return `https://mineskin.eu/avatar/${this.username}/100.png`;
   }
 
-  navigateTo(path: string) {
-    window.location.href = `${this.baseUrl}/moonix-showcase/#${path}`;
+  navigateTo(path: string, event: Event) {
+    event.preventDefault();
+    window.location.href = `${this.baseUrl}/moonix-showcase${path}`;
   }
+  
 
   openExternalLink(url: string) {
     window.open(url, '_blank');

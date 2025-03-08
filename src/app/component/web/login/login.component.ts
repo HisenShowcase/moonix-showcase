@@ -42,7 +42,7 @@ export class LoginComponent {
           password_hash: sha256("dummy_password") 
         },
         username: "H1senk0",
-        email: "h1senk0@example.com",
+        email: "ficnarnicolas@gmail.com",
         role: "user"
       }
     };
