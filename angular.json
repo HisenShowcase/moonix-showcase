@@ -31,7 +31,7 @@
               "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [],
-            "baseHref": "/moonix-showcase/"  // Set the correct baseHref
+            "baseHref": "/moonix-showcase/"
           },
           "configurations": {
             "production": {
