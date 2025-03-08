@@ -15,7 +15,7 @@
           "options": {
             "outputPath": "dist/untitled2",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -30,7 +30,8 @@
               "src/styles.css",
               "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "baseHref": "/moonix-showcase/"
           },
           "configurations": {
             "production": {
