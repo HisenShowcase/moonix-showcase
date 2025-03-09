@@ -5,37 +5,47 @@
 
   <div class="navbar-center">
     <ul class="nav-list">
-      <li routerLink="/moonix-showcase/" routerLinkActive="active">Domů</li>
-      <li routerLink="/moonix-showcase/pravidla" routerLinkActive="active">Pravidla</li>
-      <li routerLink="/moonix-showcase/team" routerLinkActive="active">A-Team</li>
+      <li>
+        <a routerLink="/moonix-showcase/" routerLinkActive="active">Domů</a>
+      </li>
+      <li>
+        <a routerLink="/moonix-showcase/pravidla" routerLinkActive="active">Pravidla</a>
+      </li>
+      <li>
+        <a routerLink="/moonix-showcase/team" routerLinkActive="active">A-Team</a>
+      </li>
       <li>
         <div class="sparkles-wrapper">
-          <li routerLink="/moonix-showcase/store" routerLinkActive="active" class="obchod">OBCHOD</li>
+          <a routerLink="/moonix-showcase/store" routerLinkActive="active" class="obchod">OBCHOD</a>
         </div>
       </li>
-      <li routerLink="/moonix-showcase/vote" routerLinkActive="active">Hlasovat</li>
-      <li routerLink="/moonix-showcase/vip" routerLinkActive="active">VIP</li>
+      <li>
+        <a routerLink="/moonix-showcase/vote" routerLinkActive="active">Hlasovat</a>
+      </li>
+      <li>
+        <a routerLink="/moonix-showcase/vip" routerLinkActive="active">VIP</a>
+      </li>
       <li class="vicedrop" (mouseenter)="toggleVicedrop(true)" (mouseleave)="toggleVicedrop(false)">
-        <span class="vicedrop-toggle">
+        <a href="javascript:void(0)" class="vicedrop-toggle">
           Více <i class="fas fa-chevron-down chevron"></i>
-        </span>
+        </a>
         <div *ngIf="isVicedropOpen" class="vicedrop-menu">
-          <li routerLink="/moonix-showcase/faq" routerLinkActive="active">FAQ</li>
-          <li routerLink="/moonix-showcase/nabor" routerLinkActive="active">Nábor</li>
+          <a routerLink="/moonix-showcase/faq" routerLinkActive="active">FAQ</a>
+          <a routerLink="/moonix-showcase/nabor" routerLinkActive="active">Nábor</a>
         </div>
       </li>
     </ul>
   </div>
 
   <div class="navbar-right">
-    <span *ngIf="!isLogged()" class="prihlaseni" (click)="openLoginPopup()">Přihlásit</span>
+    <a *ngIf="!isLogged()" class="prihlaseni" (click)="openLoginPopup()">Přihlásit</a>
 
     <div *ngIf="isLogged()" class="user-actions">
-      <span class="btn btn-panel" (click)="openPanel()">Panel</span>
+      <a class="btn btn-panel" (click)="openPanel()">Panel</a>
       <div class="profile-container">
-        <span class="profile-circle" (click)="logout()">
+        <a class="profile-circle" (click)="logout()">
           <img [src]="getMinecraftHeadUrl()" alt="Profile Picture">
-        </span>
+        </a>
       </div>
     </div>
   </div>

@@ -1,60 +1,53 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import {HomeComponent} from "./home.component";
-import {NavbarComponent} from "./component/web/navbar/navbar.component";
-import {HeroComponent} from "./component/web/hero/hero.component";
-import {FeaturesComponent} from "./component/web/features/features.component";
-import {StatsComponent} from "./component/web/stats/stats.component";
-import {CommunityComponent} from "./component/web/community/community.component";
-import {FooterComponent} from "./component/web/footer/footer.component";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {RouterModule} from "@angular/router";
-import {AppRoutingModule, routes} from "./app.routes";
-import {NgModel} from "@angular/forms";
-import {NgIf} from "@angular/common";
-import {AuthGuard} from "./auth.guard";
-import {AuthInterceptor} from "./app.auth-interceptor";
-import {RulesComponent} from "./component/web/rules/rules.component";
-import { ReviewsComponent } from './component/web/review/review.component';
-import { TeamComponent } from './component/web/team/team.component';
-import { StoreComponent } from './component/web/store/store.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { RouterModule } from "@angular/router";
+import { AppRoutingModule, routes } from "./app.routes";
 
+import { AppComponent } from './app.component'; // Standalone component, import only
+import { HomeComponent } from "./home.component"; // Standalone, import only
+import { NavbarComponent } from "./component/web/navbar/navbar.component"; // Standalone, import only
+import { HeroComponent } from "./component/web/hero/hero.component"; // Standalone, import only
+import { FeaturesComponent } from "./component/web/features/features.component"; // Standalone, import only
+import { StatsComponent } from "./component/web/stats/stats.component"; // Standalone, import only
+import { CommunityComponent } from "./component/web/community/community.component"; // Standalone, import only
+import { FooterComponent } from "./component/web/footer/footer.component"; // Standalone, import only
+import { RulesComponent } from "./component/web/rules/rules.component"; // Standalone, import only
+import { ReviewsComponent } from "./component/web/review/review.component"; // Standalone, import only
+import { TeamComponent } from "./component/web/team/team.component"; // Standalone, import only
+import { StoreComponent } from "./component/web/store/store.component"; // Standalone, import only
+
+import { AuthGuard } from "./auth.guard";
+import { AuthInterceptor } from "./app.auth-interceptor";
 
 @NgModule({
-  declarations: [
-    NgModule,
-    
-    ReviewsComponent
-  ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule.forRoot(routes),
+    AppRoutingModule,
+
+    // ✅ Import standalone components instead of declaring them
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    RouterModule.forRoot(routes),
-    NgIf,
     HeroComponent,
     FeaturesComponent,
     StatsComponent,
     CommunityComponent,
-    ReviewsComponent,
     FooterComponent,
     RulesComponent,
+    ReviewsComponent,
     StoreComponent,
-    TeamComponent,
-    RouterModule,
-    AppRoutingModule
+    TeamComponent
   ],
-  exports: [RouterModule, ReviewsComponent],
   providers: [
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }],
-  bootstrap: [AppComponent]
+    }
+  ],
 })
 export class AppModule { }
