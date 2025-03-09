@@ -5,25 +5,25 @@
 
   <div class="navbar-center">
     <ul class="nav-list">
-      <li><a href="/moonix-showcase/" (click)="navigateTo('/moonix-showcase/', $event)">Domů</a>
-        <li><a href="/moonix-showcase/pravidla" (click)="navigateTo('/pravidla', $event)">Pravidla</a></li>
-        <li><a href="/moonix-showcase/team" (click)="navigateTo('/team', $event)">A-Team</a></li>
-        <li>
-          <div class="sparkles-wrapper">
-            <a href="/moonix-showcase/store" class="obchod" (click)="navigateTo('/store', $event)">OBCHOD</a>
-          </div>
-        </li>
-        <li><a href="/moonix-showcase/vote" (click)="navigateTo('/vote', $event)">Hlasovat</a></li>
-        <li><a href="/moonix-showcase/vip" (click)="navigateTo('/vip', $event)">VIP</a></li>
-        <li class="vicedrop" (mouseenter)="toggleVicedrop(true)" (mouseleave)="toggleVicedrop(false)">
-          <a href="#" class="vicedrop-toggle">
-            Více <i [class]="isVicedropOpen ? 'fas fa-chevron-down' : 'fas fa-chevron-down'" class="chevron"></i>
-          </a>
-          <div *ngIf="isVicedropOpen" class="vicedrop-menu">
-            <a href="/moonix-showcase/faq" (click)="navigateTo('/faq', $event)">FAQ</a>
-            <a href="/moonix-showcase/nabor" (click)="navigateTo('/nabor', $event)">nábor</a>
-          </div>
-        </li>
+      <li><a [routerLink]="['/moonix-showcase/']">Domů</a></li>
+      <li><a [routerLink]="['/moonix-showcase/pravidla']">Pravidla</a></li>
+      <li><a [routerLink]="['/moonix-showcase/team']">A-Team</a></li>
+      <li>
+        <div class="sparkles-wrapper">
+          <a [routerLink]="['/moonix-showcase/store']" class="obchod">OBCHOD</a>
+        </div>
+      </li>
+      <li><a [routerLink]="['/moonix-showcase/vote']">Hlasovat</a></li>
+      <li><a [routerLink]="['/moonix-showcase/vip']">VIP</a></li>
+      <li class="vicedrop" (mouseenter)="toggleVicedrop(true)" (mouseleave)="toggleVicedrop(false)">
+        <a href="#" class="vicedrop-toggle">
+          Více <i [class]="isVicedropOpen ? 'fas fa-chevron-down' : 'fas fa-chevron-down'" class="chevron"></i>
+        </a>
+        <div *ngIf="isVicedropOpen" class="vicedrop-menu">
+          <a [routerLink]="['/moonix-showcase/faq']">FAQ</a>
+          <a [routerLink]="['/moonix-showcase/nabor']">nábor</a>
+        </div>
+      </li>
     </ul>
   </div>
 

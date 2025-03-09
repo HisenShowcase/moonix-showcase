@@ -1,3 +1,7 @@
-<script>
-    window.location.replace("/moonix-showcase/" + window.location.pathname);
-  </script>
+<script type="text/javascript">
+  var path = window.location.pathname;
+  var basePath = '/moonix-showcase';
+  if (!path.startsWith(basePath)) {
+    window.location.pathname = basePath + path;
+  }
+</script>

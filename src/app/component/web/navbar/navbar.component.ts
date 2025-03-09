@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from "../login/login.component";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { Router } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import { NgIf } from "@angular/common";
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    RouterModule
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'] // Ensure correct style file path
@@ -47,8 +48,9 @@ export class NavbarComponent {
 
   navigateTo(path: string, event: Event) {
     event.preventDefault();
-    window.location.href = `${this.baseUrl}/moonix-showcase${path}`;
+    this.router.navigate([path]);
   }
+  
   
 
   openExternalLink(url: string) {

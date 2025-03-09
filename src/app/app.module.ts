@@ -10,7 +10,7 @@ import {CommunityComponent} from "./component/web/community/community.component"
 import {FooterComponent} from "./component/web/footer/footer.component";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
-import {routes} from "./app.routes";
+import {AppRoutingModule, routes} from "./app.routes";
 import {NgModel} from "@angular/forms";
 import {NgIf} from "@angular/common";
 import {AuthGuard} from "./auth.guard";
@@ -43,7 +43,9 @@ import { StoreComponent } from './component/web/store/store.component';
     FooterComponent,
     RulesComponent,
     StoreComponent,
-    TeamComponent
+    TeamComponent,
+    RouterModule,
+    AppRoutingModule
   ],
   exports: [RouterModule, ReviewsComponent],
   providers: [
