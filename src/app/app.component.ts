@@ -22,7 +22,7 @@ import { ReviewsService } from './service/review/reviews.service';
   standalone: true,
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [
     { provide: ToastrService, useClass: ToastrService },
