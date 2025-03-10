@@ -6,32 +6,32 @@
   <div class="navbar-center">
     <ul class="nav-list">
       <li>
-        <a routerLink="/moonix-showcase/" routerLinkActive="active">Domů</a>
+        <a routerLink="/" routerLinkActive="active">Domů</a>
       </li>
       <li>
-        <a routerLink="/moonix-showcase/pravidla" routerLinkActive="active">Pravidla</a>
+        <a routerLink="/pravidla" routerLinkActive="active">Pravidla</a>
       </li>
       <li>
-        <a routerLink="/moonix-showcase/team" routerLinkActive="active">A-Team</a>
+        <a routerLink="/team" routerLinkActive="active">A-Team</a>
       </li>
       <li>
         <div class="sparkles-wrapper">
-          <a routerLink="/moonix-showcase/store" routerLinkActive="active" class="obchod">OBCHOD</a>
+          <a routerLink="/store" routerLinkActive="active" class="obchod">OBCHOD</a>
         </div>
       </li>
       <li>
-        <a routerLink="/moonix-showcase/vote" routerLinkActive="active">Hlasovat</a>
+        <a routerLink="/vote" routerLinkActive="active">Hlasovat</a>
       </li>
       <li>
-        <a routerLink="/moonix-showcase/vip" routerLinkActive="active">VIP</a>
+        <a routerLink="/vip" routerLinkActive="active">VIP</a>
       </li>
       <li class="vicedrop" (mouseenter)="toggleVicedrop(true)" (mouseleave)="toggleVicedrop(false)">
         <a href="javascript:void(0)" class="vicedrop-toggle">
           Více <i class="fas fa-chevron-down chevron"></i>
         </a>
         <div *ngIf="isVicedropOpen" class="vicedrop-menu">
-          <a routerLink="/moonix-showcase/faq" routerLinkActive="active">FAQ</a>
-          <a routerLink="/moonix-showcase/nabor" routerLinkActive="active">Nábor</a>
+          <a routerLink="/faq" routerLinkActive="active">FAQ</a>
+          <a routerLink="/nabor" routerLinkActive="active">Nábor</a>
         </div>
       </li>
     </ul>

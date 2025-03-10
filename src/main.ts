@@ -1,7 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter, withHashLocation } from '@angular/router'; // Correct import
+import { provideRouter, withHashLocation } from '@angular/router';
 import { AppComponent } from './app/app.component';
-import { routes } from './app/app.routes';
+import { routes } from './app/app.routes';  // Ensure routes are imported here
 
 bootstrapApplication(AppComponent, {
   providers: [

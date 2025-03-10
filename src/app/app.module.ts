@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
-import { HashLocationStrategy, LocationStrategy } from "@angular/common";  // Corrected import
-import { AppRoutingModule, routes } from "./app.routes";
+import { HashLocationStrategy, LocationStrategy } from "@angular/common";  // Correct import
+import { AppRoutingModule } from "./app.routes"; // Import app-routing module
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from "./home.component";
@@ -25,8 +25,8 @@ import { AuthInterceptor } from "./app.auth-interceptor";
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes), // ✅ Register routes
-    AppRoutingModule,
+    AppRoutingModule, // Use routing module
+    RouterModule.forRoot([]), // Register empty routing here
     AppComponent,
     HomeComponent,
     NavbarComponent,
@@ -47,7 +47,7 @@ import { AuthInterceptor } from "./app.auth-interceptor";
       useClass: AuthInterceptor,
       multi: true
     },
-    { provide: LocationStrategy, useClass: HashLocationStrategy } // ✅ Enables Hash Routing
+    { provide: LocationStrategy, useClass: HashLocationStrategy } // Enable HashLocationStrategy
   ],
 })
 export class AppModule { }
