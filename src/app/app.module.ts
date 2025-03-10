@@ -1,8 +1,22 @@
-import { NgModule, importProvidersFrom } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
-import { AppRoutingModule } from "./app.routes";
+import { HashLocationStrategy, LocationStrategy } from "@angular/common";  // Corrected import
+import { AppRoutingModule, routes } from "./app.routes";
+
+import { AppComponent } from './app.component';
+import { HomeComponent } from "./home.component";
+import { NavbarComponent } from "./component/web/navbar/navbar.component";
+import { HeroComponent } from "./component/web/hero/hero.component";
+import { FeaturesComponent } from "./component/web/features/features.component";
+import { StatsComponent } from "./component/web/stats/stats.component";
+import { CommunityComponent } from "./component/web/community/community.component";
+import { FooterComponent } from "./component/web/footer/footer.component";
+import { RulesComponent } from "./component/web/rules/rules.component";
+import { ReviewsComponent } from "./component/web/review/review.component";
+import { TeamComponent } from "./component/web/team/team.component";
+import { StoreComponent } from "./component/web/store/store.component";
 
 import { AuthGuard } from "./auth.guard";
 import { AuthInterceptor } from "./app.auth-interceptor";
@@ -11,20 +25,29 @@ import { AuthInterceptor } from "./app.auth-interceptor";
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule,
-    AppRoutingModule
+    RouterModule.forRoot(routes), // ✅ Register routes
+    AppRoutingModule,
+    AppComponent,
+    HomeComponent,
+    NavbarComponent,
+    HeroComponent,
+    FeaturesComponent,
+    StatsComponent,
+    CommunityComponent,
+    FooterComponent,
+    RulesComponent,
+    ReviewsComponent,
+    StoreComponent,
+    TeamComponent
   ],
   providers: [
-    importProvidersFrom(
-      RouterModule, // ✅ Ensures routing works correctly
-      HttpClientModule, // ✅ Ensures HTTP requests work
-    ),
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
+    { provide: LocationStrategy, useClass: HashLocationStrategy } // ✅ Enables Hash Routing
   ],
 })
 export class AppModule { }
