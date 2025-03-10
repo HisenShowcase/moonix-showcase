@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
-import { HashLocationStrategy, LocationStrategy } from "@angular/common";  // Correct import
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';  // Make sure the correct imports are used
 import { AppRoutingModule } from "./app.routes"; // Import app-routing module
+import { ToastrModule } from 'ngx-toastr';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from "./home.component";
@@ -17,6 +19,7 @@ import { RulesComponent } from "./component/web/rules/rules.component";
 import { ReviewsComponent } from "./component/web/review/review.component";
 import { TeamComponent } from "./component/web/team/team.component";
 import { StoreComponent } from "./component/web/store/store.component";
+import { routes } from './app.routes'; // Import your routes here
 
 import { AuthGuard } from "./auth.guard";
 import { AuthInterceptor } from "./app.auth-interceptor";
@@ -26,7 +29,7 @@ import { AuthInterceptor } from "./app.auth-interceptor";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule, // Use routing module
-    RouterModule.forRoot([]), // Register empty routing here
+    RouterModule.forRoot(routes, { useHash: true }),
     AppComponent,
     HomeComponent,
     NavbarComponent,
@@ -38,7 +41,8 @@ import { AuthInterceptor } from "./app.auth-interceptor";
     RulesComponent,
     ReviewsComponent,
     StoreComponent,
-    TeamComponent
+    TeamComponent,
+    ToastrModule.forRoot(), // Provide ToastConfig
   ],
   providers: [
     AuthGuard,
@@ -47,7 +51,7 @@ import { AuthInterceptor } from "./app.auth-interceptor";
       useClass: AuthInterceptor,
       multi: true
     },
-    { provide: LocationStrategy, useClass: HashLocationStrategy } // Enable HashLocationStrategy
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
 })
 export class AppModule { }
