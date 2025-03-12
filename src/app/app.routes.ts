@@ -29,6 +29,7 @@ export const routes: Routes = [
   { path: 'games', component: GamesComponent }
 ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]

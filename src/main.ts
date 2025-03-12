@@ -5,7 +5,7 @@ import { routes } from './app/app.routes';  // Ensure routes are imported here
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes, withHashLocation()) // Enables hash-based routing
+    provideRouter(routes, withHashLocation())
   ]
 }).catch(err => console.error(err));
 
