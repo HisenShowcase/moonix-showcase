@@ -38,21 +38,6 @@
   background: linear-gradient(to top, var(--background-color), transparent);
 }
 
-.hero h1 {
-  font-size: 6rem;
-  margin: 0;
-  padding: 0;
-  color: transparent; /* Ensures gradient is fully visible */
-  background: linear-gradient(90deg, rgb(27, 255, 242), rgb(2, 195, 201), rgb(159, 233, 240), rgb(27, 255, 242));
-  background-size: 300%; /* Larger size for a smoother transition across letters */
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: gradientTextAnimation 5s ease infinite; /* Slower for a smoother gradient transition */
-  font-weight: 600;
-  margin-bottom: 20px;
-  transform: translateY(-50px);
-}
-
 .hero-text {
   width: 40%;
   transform: translateY(-50px);
@@ -96,9 +81,7 @@
   cursor: pointer;
   font-size: 16px;
   background-color: transparent;
-  border-radius: 25px;
-  border: 2px solid rgb(27, 255, 242);
-  color: rgb(27, 255, 242);
+  color: #713bbd;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -129,6 +112,141 @@
 .copied #ip-address {
   color: rgb(2, 195, 201);
 }
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Adjust for how strong / long you want the fade */
+  background: linear-gradient(to top, var(--background-color), transparent);
+  z-index: 1;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(8px);
+  z-index: 0; /* stays underneath */
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(10, 10, 30, 0.65);
+  backdrop-filter: blur(2px);
+  padding: 20px;
+}
+
+.hero-content {
+  color: #fff;
+  max-width: 800px;
+}
+
+.hero-logo {
+  max-height: 180px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 10px 0;
+  color: transparent;
+  background: linear-gradient(90deg, #a691c4, #6a00ff, #7a3dd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientTextAnimationA 5s ease infinite;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin: 10px 0 30px;
+  color: #ccc;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  background: rgba(0, 0, 0, 0.007);
+  border-radius: 12px;
+  padding: 15px 25px;
+  backdrop-filter: blur(1px);
+  box-shadow: 0 0 10px #00000055;
+}
+
+.stat-count {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.stat-sub {
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.copy-ip-button,
+.discord-button {
+  font-size: 1.1rem;
+  padding: 10px 8px;
+  border-radius: 15px;
+  border: 2px solid #1bfff400;
+  background: transparent;
+  color: #792ee4;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copy-ip-button:hover,
+.discord-button:hover {
+  color: #eedbf3;
+}
+
+@keyframes gradientTextAnimationA {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 .discord-button {
   font-family: 'Nunito', sans-serif;
@@ -165,7 +283,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 40px;
-  color: rgb(27, 255, 242);
+  color: #7a45c5;
   opacity: 0.8;
   transition: color 0.3s ease;
   z-index: 10;
@@ -210,20 +328,20 @@
   width: 65%;
   height: 4px;
   border-radius: 2px;
-  background: rgb(27, 255, 242);
+  background: #a76df8;
   transform: translateX(-50%);
   animation: underlineColorChange 2s infinite;
 }
 
 @keyframes underlineColorChange {
   0% {
-    background: rgb(27, 255, 242);
+    background: #a691c4;
   }
   50% {
-    background: rgb(159, 233, 240);
+    background: #6a00ff;
   }
   100% {
-    background: rgb(27, 255, 242);
+    background: #7a3dd1;
   }
 }
 
@@ -237,7 +355,7 @@
 .server-card {
   position: relative;
   display: inline-block;
-  border: 0px solid rgb(27, 255, 242);
+  border: 0px solid #a76df8;
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
@@ -270,24 +388,46 @@
   transition: filter 0.3s ease;
 }
 
+.survival-logo{
+  scale: 0.6
+}
+
 .server-name-bubble {
   position: absolute;
   bottom: 50%;
   left: 50%;
   transform: translate(-50%, 50%);
-  background: rgb(27, 255, 242);
-  color: #444444;
-  padding: 10px 20px;
+  color: #dadadae3;
   border-radius: 25px;
   font-weight: 600;
   font-size: 1.3rem;
-  box-shadow: 5px 5px 4px #12121267;
+  transition: transform 0.5s ease, opacity 0.5s ease, margin-bottom 0.2s ease;
+  opacity: 1;
+}
+
+.server-name-bubble-legends {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  color: #dadadae3;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.3rem;
   transition: transform 0.5s ease, opacity 0.5s ease, margin-bottom 0.2s ease;
   opacity: 1;
 }
 
 .server-card:hover .server-name-bubble {
   margin-bottom: 50px;
+}
+
+.server-card:hover .server-name-bubble-legends {
+  margin-bottom: 40px;
+}
+
+.event-logo {
+  scale: 0.6;
 }
 
 .server-info {
@@ -355,13 +495,13 @@
 
 @keyframes underlineColorChange {
   0% {
-    background: rgb(27, 255, 242);
+    background: #7e31e9;
   }
   50% {
-    background: rgb(159, 233, 240);
+    background: #6b07f7;
   }
   100% {
-    background: rgb(27, 255, 242);
+    background: #7e31e9;
   }
 }
 
@@ -369,6 +509,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.color-number {
+  color: #7e31e9;
+}
+
+.legends-logo{
+  scale: 0.70;
 }
 
 .review-card {
@@ -414,7 +562,7 @@
   }
   100% {
     transform: translateY(calc(100vh + 40px)) rotate(360deg);
-    color: rgb(27, 255, 242);
+    color: #792ee4;
   }
 }
 

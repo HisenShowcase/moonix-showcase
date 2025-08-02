@@ -2,12 +2,10 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter, withHashLocation } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';  // Ensure routes are imported here
+import { appConfig } from './app/app.config';
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(routes, withHashLocation())
-  ]
-}).catch(err => console.error(err));
+bootstrapApplication(AppComponent, appConfig)
+  .catch((err) => console.error(err));
 
 document.addEventListener('DOMContentLoaded', () => {
   const cursor = document.getElementById('custom-cursor');

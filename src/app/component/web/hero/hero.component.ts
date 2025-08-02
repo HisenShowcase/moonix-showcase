@@ -12,9 +12,12 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HeroComponent implements AfterViewInit {
   isCopied = false;
-  currentIP = 'play.moonix.cz';
+  currentIP = 'play.voidex.cz';
   selectedVote: string | null = null;
   minecraftNick = '';
+
+  serverIp = 'play.voidex.cz';
+  discordInvite = 'https://discord.gg/EWH69zdUe8';
 
   constructor(private toastr: ToastrService) {}
 
@@ -31,7 +34,7 @@ export class HeroComponent implements AfterViewInit {
   }
 
   ClickToJoin() {
-    const ipAddresses = ["play.moonix.cz", "mc.moonix.cz"];
+    const ipAddresses = ["play.voidex.cz", "mc.voidex.cz"];
     this.currentIP = this.getRandomIP(ipAddresses);
 
     this.copyToClipboard(this.currentIP).then(() => {

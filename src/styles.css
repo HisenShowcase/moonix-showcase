@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700&display=swap');
 
 :root {
-  --primary-color: #00d6ff;
-  --background-color: #1b1b1b;
+  --primary-color: #a76df8;
+  --background-color: #100e1f;
   --text-color: #FFFFFF;
-  --accent-color: #80f4ff;
+  --accent-color: #a76df8;
 }
 
 body, html {
@@ -73,13 +73,13 @@ body, html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(89, 236, 255); /* Thumb color */
+  background: #a76df8; /* Thumb color */
   border-radius: 10px;
   transition: background-color 0.3s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(2, 195, 201); /* Thumb color on hover */
+  background: #a76df8; /* Thumb color on hover */
 }
 
 ::-webkit-scrollbar-button {

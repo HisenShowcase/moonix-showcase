@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { LoginComponent } from "../login/login.component";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Router, RouterModule } from "@angular/router";
-import { NgIf } from "@angular/common";
+import { CommonModule, NgIf } from "@angular/common";
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [
     NgIf,
-    RouterModule
+    RouterModule,
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'] // Ensure correct style file path

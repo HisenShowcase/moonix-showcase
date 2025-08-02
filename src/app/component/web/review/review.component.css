@@ -8,7 +8,7 @@
 
 .average-rating-card {
   background: #121212;
-  border: 3px solid rgb(27, 255, 242);
+  border: 3px solid #792ee4;
   border-radius: 15px;
   padding: 20px;
   width: 250px;
@@ -54,7 +54,7 @@
 
 .review-card {
   background: #121212;
-  border: 3px solid rgb(27, 255, 242);
+  border: 3px solid #792ee4;
   border-radius: 15px;
   padding: 20px;
   width: 375px;
@@ -79,7 +79,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin-right: 10px;
-  border: 2px solid rgb(27, 255, 242);
+  border: 2px solid #792ee4;
 }
 
 .profile-picture img {
@@ -110,7 +110,7 @@
 
 .arrow {
   font-size: 3rem;
-  color: rgb(27, 255, 242);
+  color: #9e6ae6;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -121,7 +121,7 @@
 }
 
 .arrow:hover {
-  color: rgb(0, 183, 174);
+  color: #bda6da;
 }
 
 .arrow-left {

@@ -13,7 +13,7 @@ body {
   justify-content: flex-start; /* Align from the top */
   min-height: 100vh; /* Minimum height to cover full viewport */
   padding: 30px 50px; /* Reduced padding to move content higher */
-  background-color: #121212;
+  background-color: var(--background-color);
   color: #fff;
   text-align: center;
   overflow: hidden; /* Prevent inner scrollbars */
@@ -57,7 +57,7 @@ body {
   width: 65%;
   height: 4px;
   border-radius: 2px;
-  background: rgb(27, 255, 242);
+  background: #8f53e2;
   transform: translateX(-50%);
   animation: underlineColorChange 2s infinite;
 }
@@ -70,7 +70,7 @@ body {
   padding: 10px;
   font-size: 1rem;
   border-radius: 5px;
-  border: 2px solid rgb(27, 255, 242);
+  border: 2px solid #8f53e2;
   background-color: #1e1e1e;
   color: #fff;
   width: 50%;
@@ -85,7 +85,7 @@ body {
 /* Voting Buttons with Unique Background Images */
 .vote-button {
   background-color: transparent;
-  border: 2px solid rgb(27, 255, 242);
+  border: 2px solid #8f53e2;
   color: #fff;
   border-radius: 25px;
   padding: 10px 20px;
@@ -117,7 +117,7 @@ body {
 
 .vote-button:hover {
   color: rgb(219, 219, 219);
-  border-color: rgb(2, 195, 201);
+  border-color: #7527e2;
   background-color: rgba(2, 195, 201, 0.2); /* Slight hover effect */
 }
 
@@ -199,7 +199,7 @@ body {
   width: 50%;
   height: 4px;
   border-radius: 2px;
-  background: rgb(27, 255, 242);
+  background: #8f53e2;
   transform: translateX(-50%);
   animation: underlineColorChange 2s infinite;
 }
@@ -212,8 +212,8 @@ body {
 
 .review-button {
   background-color: transparent;
-  border: 2px solid rgb(27, 255, 242);
-  color: rgb(27, 255, 242);
+  border: 2px solid #7527e2;
+  color: white;
   border-radius: 35px;
   padding: 15px 25px;
   background-size: cover; /* Cover the button */
@@ -228,8 +228,8 @@ body {
 }
 
 .review-button:hover {
-  color: white;
-  border-color: rgb(2, 195, 201);
+  color: #ffffff;
+  border-color: white;
 }
 
 .review-button i {
@@ -239,13 +239,13 @@ body {
 /* Underline Animation */
 @keyframes underlineColorChange {
   0% {
-    background: rgb(27, 255, 242);
+    background: #7e31e9;
   }
   50% {
-    background: rgb(159, 233, 240);
+    background: #6b07f7;
   }
   100% {
-    background: rgb(27, 255, 242);
+    background: #7e31e9;
   }
 }
 
@@ -281,7 +281,7 @@ body {
   }
   100% {
     transform: translateY(calc(100vh + 40px)) rotate(360deg);
-    color: rgb(27, 255, 242); /* Final blue color */
+    color: #7e31e9; /* Final blue color */
   }
 }
 

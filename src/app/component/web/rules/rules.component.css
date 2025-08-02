@@ -36,30 +36,30 @@ table {
   width: 65%; /* Adjust underline width as needed */
   height: 4px;
   border-radius: 2px; /* Rounded corners */
-  background: rgb(27, 255, 242);
+  background: #8d44f3;
   transform: translateX(-50%); /* Centered underline */
   animation: underlineColorChange 2s infinite;
 }
 
 @keyframes underlineColorChange {
   0% {
-    background: rgb(27, 255, 242); /* Basic blue */
+    background: #7e31e9;
   }
   50% {
-    background: rgb(159, 233, 240); /* Light blue */
+    background: #6b07f7;
   }
   100% {
-    background: rgb(27, 255, 242); /* Basic blue */
+    background: #7e31e9;
   }
 }
 
 .title {
-  color: #00eaff;
+  color: #8d44f3;
   margin-top: 4%;
 }
 
 th, td {
-  border: 1px solid #4b5563;
+  border: 1px solid #543b7c;
 }
 
 th {
@@ -102,7 +102,7 @@ tr:nth-child(even) {
   }
   100% {
     transform: translateY(calc(100vh + 40px)) rotate(360deg);
-    color: rgb(27, 255, 242); /* Final blue color */
+    color: #8d44f3; /* Final blue color */
   }
 }
 

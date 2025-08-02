@@ -39,7 +39,6 @@ import { AuthInterceptor } from "./app.auth-interceptor";
     CommunityComponent,
     FooterComponent,
     RulesComponent,
-    ReviewsComponent,
     StoreComponent,
     TeamComponent,
     ToastrModule.forRoot(), // Provide ToastConfig

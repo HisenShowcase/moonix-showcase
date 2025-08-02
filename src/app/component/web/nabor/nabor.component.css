@@ -33,15 +33,15 @@
 }
 
 @keyframes underlineColorChange {
-    0% {
-        background: rgb(27, 255, 242);
-    }
-    50% {
-        background: rgb(159, 233, 240);
-    }
-    100% {
-        background: rgb(27, 255, 242);
-    }
+  0% {
+    background: #7e31e9;
+  }
+  50% {
+    background: #6b07f7;
+  }
+  100% {
+    background: #7e31e9;
+  }
 }
   
   .nabor-card {
@@ -64,7 +64,7 @@
     top: -20px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgb(27, 255, 242);
+    background: #7e31e9;
     color: #121212;
     padding: 5px 15px;
     border-radius: 15px;
@@ -98,7 +98,7 @@
   
   .requirements {
     font-size: 1.2rem;
-    color: rgb(27, 255, 242);
+    color: #9a6add;
     font-weight: 500;
     margin: 20px 0 10px 0; /* Adds a 20px top margin */
     text-align: left;
@@ -118,8 +118,8 @@
 
   .apply-button {
     background-color: transparent;
-    border: 2px solid rgb(27, 255, 242);
-    color: rgb(27, 255, 242);
+    border: 2px solid #9a6add;
+    color: #9a6add;
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
     font-size: 16px;
@@ -136,18 +136,17 @@
     color: #ccc;
   }
   
-  @keyframes underlineColorChange {
-    0% {
-      background: rgb(27, 255, 242);
-    }
-    50% {
-      background: rgb(159, 233, 240);
-    }
-    100% {
-      background: rgb(27, 255, 242);
-    }
-    
+ @keyframes underlineColorChange {
+  0% {
+    background: #7e31e9;
   }
+  50% {
+    background: #6b07f7;
+  }
+  100% {
+    background: #7e31e9;
+  }
+}
 
   .falling-blocks {
     position: absolute;
@@ -180,7 +179,7 @@
     }
     100% {
       transform: translateY(calc(100vh + 40px)) rotate(360deg);
-      color: rgb(27, 255, 242);
+      color: #7e31e9;
     }
   }
   

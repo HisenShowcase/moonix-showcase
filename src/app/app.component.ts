@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import {RouterModule, RouterOutlet} from '@angular/router';
-import {NavbarComponent} from "./component/web/navbar/navbar.component";
-import {HeroComponent} from "./component/web/hero/hero.component";
 import {FeaturesComponent} from "./component/web/features/features.component";
 import {StatsComponent} from "./component/web/stats/stats.component";
 import {CommunityComponent} from "./component/web/community/community.component";
@@ -23,11 +21,10 @@ import { ReviewsService } from './service/review/reviews.service';
   imports: [
     RouterModule,
     CommonModule,
-  ],
+],
   providers: [
     { provide: ToastrService, useClass: ToastrService },
     McstatusService,
-    ReviewsService,
     AccountService
   ],
   templateUrl: './app.component.html',

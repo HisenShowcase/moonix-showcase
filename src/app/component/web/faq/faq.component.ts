@@ -23,12 +23,12 @@ export class FaqComponent {
       name: 'Globální',
       faqs: [
         {
-          question: 'Jak se napojím na server Moonix.cz?',
-          answer: 'Po zapnutí Minecraftu klikněte na tlačítko "Multiplayer" a následně "Add Server". Pojmenujete si server jak chcete a napíšete adresu projektu <span class="highlight-blue">play.moonix.cz</span>! Klikněte "Join" a můžete hrát!',
+          question: 'Jak se napojím na server Voidex.cz?',
+          answer: 'Po zapnutí Minecraftu klikněte na tlačítko "Multiplayer" a následně "Add Server". Pojmenujete si server jak chcete a napíšete adresu projektu <span class="highlight-blue">play.voidex.cz</span>! Klikněte "Join" a můžete hrát!',
           open: false
         },
         {
-          question: 'Napojil/a jsem se na server a vidím před sebou nápis Moonix. Co mám dělat?',
+          question: 'Napojil/a jsem se na server a vidím před sebou nápis Voidex. Co mám dělat?',
           answer: 'Na našem serveru je pro hraní vyžadována registrace. Na klávesnici stiskněte tlačítko "T" a napište /register <span class="highlight-bold-blue">[heslo] [hesloZnovu]</span> (pokud jste již na serveru byli, stačí /login <span class="highlight-bold-blue">[heslo]</span>)',
           open: false
         },
@@ -39,7 +39,7 @@ export class FaqComponent {
         },
         {
           question: 'Jak funguje VIP a kde si ho můžu koupit?',
-          answer: 'Bez VIP a podobných služeb které poskytujeme by nebylo možné server provozovat. V prvním případě tím podpoříte chod serveru a zároveň získáte mnoho výhod, které si můžete přečíst napsáním příkazu /vip na daných serverech.<br><br> VIP a jiné produkty lze zakoupit na našem obchodě obchod.moonix.cz',
+          answer: 'Bez VIP a podobných služeb které poskytujeme by nebylo možné server provozovat. V prvním případě tím podpoříte chod serveru a zároveň získáte mnoho výhod, které si můžete přečíst napsáním příkazu /vip na daných serverech.<br><br> VIP a jiné produkty lze zakoupit na našem obchodě obchod.voidex.cz',
           open: false
         },
         {

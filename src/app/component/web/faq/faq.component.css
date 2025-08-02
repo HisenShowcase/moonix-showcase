@@ -43,15 +43,15 @@ body {
 }
 
 @keyframes underlineColorChange {
-    0% {
-        background: rgb(27, 255, 242);
-    }
-    50% {
-        background: rgb(159, 233, 240);
-    }
-    100% {
-        background: rgb(27, 255, 242);
-    }
+  0% {
+    background: #7e31e9;
+  }
+  50% {
+    background: #6b07f7;
+  }
+  100% {
+    background: #7e31e9;
+  }
 }
 
 .category-buttons {
@@ -62,8 +62,8 @@ body {
 
 .category-buttons button {
     background-color: transparent;
-    border: 2px solid rgb(27, 255, 242);
-    color: rgb(27, 255, 242);
+    border: 2px solid #a76df8;
+    color: #a76df8;
     border-radius: 25px;
     padding: 10px 20px;
     font-weight: 700;
@@ -78,9 +78,9 @@ body {
 }
 
 .category-buttons button.active {
-    background-color: rgb(2, 195, 201);
+    background-color: #7a3dd1;
     color: rgb(27, 27, 27);
-    border-color: rgb(2, 195, 201);
+    border-color: #7a3dd1;
 }
 
 .category-buttons button:not(.active) {
@@ -144,7 +144,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: rgb(27, 255, 242);
+    background: #7a3dd1;
     transition: width 0.3s ease;
 }
 

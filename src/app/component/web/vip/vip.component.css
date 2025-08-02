@@ -52,20 +52,20 @@
     animation: underlineColorChange 2s infinite;
   }
   
-  @keyframes underlineColorChange {
-    0% {
-      background: rgb(27, 255, 242);
-    }
-    50% {
-      background: rgb(159, 233, 240);
-    }
-    100% {
-      background: rgb(27, 255, 242);
-    }
+@keyframes underlineColorChange {
+  0% {
+    background: #7e31e9;
   }
+  50% {
+    background: #6b07f7;
+  }
+  100% {
+    background: #7e31e9;
+  }
+}
   
   th, td {
-    border: 1px solid #4b5563;
+    border: 1px solid #543b7c;
     text-align: center;
   }
   
